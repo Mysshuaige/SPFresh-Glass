@@ -7,6 +7,10 @@
 #include "inc/Helper/SimpleIniReader.h"
 #include "inc/Helper/ConcurrentSet.h"
 
+#include "glass/hnsw/hnsw.hpp"
+#include "glass/searcher.hpp"
+#include "inc/Core/SPANN/Options.h"
+
 #include "inc/Core/BKT/Index.h"
 #include "inc/Core/KDT/Index.h"
 #include "inc/Core/SPANN/Index.h"
@@ -960,3 +964,133 @@ void VectorIndex::ApproximateRNG(std::shared_ptr<VectorSet>& fullVectors, std::u
     LOG(Helper::LogLevel::LL_Info, "Searching replicas ended. RNG failed count: %llu\n", static_cast<uint64_t>(rngFailedCountTotal.load()));
 }
 #endif
+// MYS3 Build glass SSDIndex 构建SSDIndex函数实现
+void VectorIndex::ApproximateRNG_mys(std::shared_ptr<VectorSet>& fullVectors, std::unordered_set<SizeType>& exceptIDS, int candidateNum, Edge* selections, int numThreads, SPANN::Options& opt_mys) {
+    // 加载glass索引
+    glass::Graph<int> graph;
+    graph.load(opt_mys.glassIndexPath);
+    std::string HeadVectorPath = opt_mys.m_indexDirectory + FolderSep + opt_mys.m_headVectorFile;
+    auto item = SPTAG::SPANN::Index<float>::LoadHeadVectors_mys(HeadVectorPath, -1);
+    
+    // MYS7 通过HeadVectorPath获取c1 c2（也就是两个虚拟节点的真实向量）
+    std::vector<uint8_t> data = item.data;
+    int chunkSize = item.d;
+    std::vector<void*> splitRes;
+    for (size_t i = 0; i < data.size(); i += chunkSize) {                
+        // 获取当前块的指针并转换为void*
+        void* chunkPtr = const_cast<void*>(static_cast<const void*>(&data[i]));
+        splitRes.push_back(chunkPtr);            
+    }
+
+    // 搜索
+    float* base = item.getRawData();
+    auto searcher = glass::create_searcher(graph, "L2", 2); // 需要传入level
+    searcher->SetData(base, item.n, item.d);
+    searcher->Optimize(16);
+    searcher->SetEf(256);
+    std::vector<std::thread> threads;
+    threads.reserve(numThreads);
+
+    std::atomic_int nextFullID(0);
+    std::atomic_size_t rngFailedCountTotal(0);
+    
+    QueryResult resultSet(NULL, candidateNum, false);
+
+    size_t rngFailedCount = 0;
+    for (int tid = 0; tid < numThreads; ++tid)
+    {                                   // MYS7 传入void*用来获取原始向量
+        threads.emplace_back([&, tid, splitRes]() 
+            {
+                std::vector<int> res(candidateNum, -1);
+                std::vector<float> dist(candidateNum);
+
+                size_t rngFailedCount = 0;
+
+                while (true)
+                {
+                    int fullID = nextFullID.fetch_add(1);
+		            if (fullID % 100000 == 0) printf("fullID: %d\n", fullID);
+                    if (fullID >= fullVectors->Count())
+                    {
+                        break;
+                    }
+                    // MYS7 将所有的节点都进行buildSSD
+                    // if (exceptIDS.count(fullID) > 0)
+                    // {
+                    //     continue;
+                    // }
+
+                    uint8_t* uint8Ptr = (uint8_t*)fullVectors->GetVector(fullID);  // 全数据集中的真实向量，将uint8转换成float32然后放入到Search中进行查询。也可以从外部传入一个指针数组，但这里是构建没必要这么干
+                    float* floatArray = new float[128];
+                    for (int i = 0; i < 128; i ++) {
+                        floatArray[i] = uint8Ptr[i];
+                    }
+                    // float* floatArray = reinterpret_cast<float*>(fullVectors->GetVector(fullID));  //直接转换会出错
+                    searcher->Search(floatArray, candidateNum, res.data(), dist.data());  // query到 每一个邻居的距离  还需要两个邻居之间的距离
+                    delete[] floatArray;
+
+                    // if (fullID < 1) {
+                    //     printf("fullID: %d\n",fullID);
+                    //     for (int i = 0; i < res.size(); i ++) printf("%d     %f\n", res[i], dist[i]);
+                    // }
+		            size_t selectionOffset = static_cast<size_t>(fullID)* opt_mys.m_replicaCount;
+                    int currReplicaCount = 0;
+                    
+                    for (int i = res.size() - 1; i >= 0 && currReplicaCount < opt_mys.m_replicaCount; -- i)
+                    {
+                        if (res[i] == -1)
+                        {
+                            break;
+                        }
+
+                        // RNG Check.// MYS8 BuildSSD 空间调整
+                        bool rngAccpeted = true;
+                        for (int j = 0; j < currReplicaCount; ++j)
+                        {
+                            // MYS7 用用传入的void* 计算距离
+                            if (currReplicaCount < 3) break;
+                            // float nnDist = ComputeDistance(GetSample(res[i]), GetSample(selections[selectionOffset+j].node));
+                            float nnDist = ComputeDistance(splitRes[res[i]], splitRes[selections[selectionOffset + j].node]);
+                            if (opt_mys.m_rngFactor * nnDist <= dist[i])            
+                            {
+                                rngAccpeted = false;
+                                break;
+                            }
+                        }
+
+                        // // MYS8 BuildSSD 空间调整
+                        // for (int j = 0; j < currReplicaCount; j ++) {
+
+                        //     if (currReplicaCount < 4) break;
+                        //     float nnDist = ComputeDistance(splitRes[res[i]], splitRes[selections[selectionOffset + j].node]);
+
+                        //     float q2c = selections[selectionOffset + j].distance;
+
+                        //     if ((q2c * q2c + dist[i] * dist[i] - nnDist * nnDist) / (2 * q2c * dist[i]) > 0.52) {
+                        //         rngAccpeted = false;
+                        //         break;
+                        //     }
+                        // }
+
+                        if (!rngAccpeted)
+                        {
+                            ++rngFailedCount;
+                            continue;
+                        }
+
+                        selections[selectionOffset + currReplicaCount].node = res[i];
+                        selections[selectionOffset + currReplicaCount].distance = dist[i];
+                        ++currReplicaCount;
+                    }
+                  }
+                rngFailedCountTotal += rngFailedCount;
+            });
+    }
+
+    for (int tid = 0; tid < numThreads; ++tid)
+    {
+        threads[tid].join();
+    }
+    LOG(Helper::LogLevel::LL_Info, "Searching replicas ended. RNG failed count: %llu\n", static_cast<uint64_t>(rngFailedCountTotal.load()));
+}
+

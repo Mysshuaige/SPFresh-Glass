@@ -15,6 +15,9 @@
 #include <climits>
 #include <future>
 #include <numeric>
+#include <set>
+
+//std::set<int> processPostingIDs;
 
 namespace SPTAG
 {
@@ -210,7 +213,17 @@ namespace SPTAG
                     auto curPostingID = p_exWorkSpace->m_postingIDs[pi];
                     ListInfo* listInfo = &(m_listInfos[curPostingID]);
                     int fileid = m_oneContext? 0: curPostingID / m_listPerFile;
-
+		    /*      std::string fullposting = "";
+		            if (processPostingIDs.count((int)curPostingID) == 0) {
+                        processPostingIDs.insert(curPostingID);
+                        fullposting = std::to_string(curPostingID);
+                        fullposting += " ";
+			        //printf("%d:还没有加入\n",(int)curPostingID);
+                    }
+                    else {
+                        //printf("已经加入！ continue\n");
+                        continue;
+                    }*/
 #ifndef BATCH_READ
                     Helper::DiskIO* indexFile = m_indexFiles[fileid].get();
 #endif
@@ -218,8 +231,20 @@ namespace SPTAG
                     diskRead += listInfo->listPageCount;
                     diskIO += 1;
                     listElements += listInfo->listEleCount;
+                    // MYS6 统计相关变量
+                    // // 统计一下总共查询了多少个向量
+                    p_stats -> m_totalListElementsCount += listInfo->listEleCount;
+                    // // TODO统计每个桶的编号以及该桶中的数量
+                    
+                    // // 统计总共的IO读取次数
+                    // p_stats -> m_totalDiskIOCount += 1;
+
+                    // // 统计最大桶和最小桶
+                    // p_stats -> m_maxPostingsize = std::max(p_stats -> m_maxPostingsize, listInfo->listEleCount);
+                    // p_stats -> m_minPostingsize = std::min(p_stats -> m_minPostingsize, listInfo->listEleCount);
 
                     size_t totalBytes = (static_cast<size_t>(listInfo->listPageCount) << PageSizeEx);
+		            // p_stats -> m_totalBytes+=totalBytes;
                     char* buffer = (char*)((p_exWorkSpace->m_pageBuffers[pi]).GetBuffer());
 
 #ifdef ASYNC_READ       
@@ -243,7 +268,15 @@ namespace SPTAG
                         {
                             DecompressPosting();
                         }
-
+			            // 将postinglistID以及其包含的ID拼成一个string
+                        /*for (int i = 0; i < listInfo->listEleCount; i++) {
+                            uint64_t offsetVectorID, offsetVector;
+                            (this->*m_parsePosting)(offsetVectorID, offsetVector, i, listInfo->listEleCount);
+                            int vectorID = *(reinterpret_cast<int*>(p_postingListFullData + offsetVectorID));
+                            fullposting += std::to_string(vectorID); fullposting += " ";
+                        }
+                        printf("fullposting: %s\n", fullposting.c_str());
+			            fullposting = "";*/
                         ProcessPosting();
                     };
 #else // async read
@@ -480,7 +513,7 @@ namespace SPTAG
                             emptySet = headVectorIDS;
                         }
 
-                        int sampleNum = 0;
+                        /*int sampleNum = 0;
                         for (int j = start; j < end && sampleNum < sampleSize; j++)
                         {
                             if (headVectorIDS.count(j) == 0) samples[sampleNum++] = j - start;
@@ -493,21 +526,23 @@ namespace SPTAG
                             COMMON::Utils::atomic_float_add(&acc, COMMON::TruthSet::CalculateRecall(p_headIndex.get(), fullVectors->GetVector(samples[j]), candidateNum));
                         }
                         acc = acc / sampleNum;
-                        LOG(Helper::LogLevel::LL_Info, "Batch %d vector(%d,%d) loaded with %d vectors (%zu) HeadIndex acc @%d:%f.\n", i, start, end, fullVectors->Count(), selections.m_selections.size(), candidateNum, acc);
+                        LOG(Helper::LogLevel::LL_Info, "Batch %d vector(%d,%d) loaded with %d vectors (%zu) HeadIndex acc @%d:%f.\n", i, start, end, fullVectors->Count(), selections.m_selections.size(), candidateNum, acc);*/
 
-                        p_headIndex->ApproximateRNG(fullVectors, emptySet, candidateNum, selections.m_selections.data(), p_opt.m_replicaCount, numThreads, p_opt.m_gpuSSDNumTrees, p_opt.m_gpuSSDLeafSize, p_opt.m_rngFactor, p_opt.m_numGPUs);
-                        LOG(Helper::LogLevel::LL_Info, "Batch %d finished!\n", i);
+                        // p_headIndex->ApproximateRNG(fullVectors, emptySet, candidateNum, selections.m_selections.data(), p_opt.m_replicaCount, numThreads, p_opt.m_gpuSSDNumTrees, p_opt.m_gpuSSDLeafSize, p_opt.m_rngFactor, p_opt.m_numGPUs);
+                        // MYS3 Build glass SSDIndex 调用构建SSDIndex
+                        p_headIndex->ApproximateRNG_mys(fullVectors, emptySet, candidateNum, selections.m_selections.data(), numThreads, p_opt);
+			            LOG(Helper::LogLevel::LL_Info, "Batch %d finished!\n", i);
 
                         for (SizeType j = start; j < end; j++) {
                             replicaCount[j] = 0;
                             size_t vecOffset = j * (size_t)p_opt.m_replicaCount;
-                            if (headVectorIDS.count(j) == 0) {
+                            // if (headVectorIDS.count(j) == 0) {  //MYS7 判断所有非头节点重复的次数并加入反向边，这里因为没有头节点所以注释
                                 for (int resNum = 0; resNum < p_opt.m_replicaCount && selections[vecOffset + resNum].node != INT_MAX; resNum++) {
                                     ++postingListSize[selections[vecOffset + resNum].node];
                                     selections[vecOffset + resNum].tonode = j;
                                     ++replicaCount[j];
                                 }
-                            }
+                            // }
                         }
 
                         if (p_opt.m_batches > 1)
@@ -548,7 +583,7 @@ namespace SPTAG
                     std::vector<int> replicaCountDist(p_opt.m_replicaCount + 1, 0);
                     for (int i = 0; i < replicaCount.size(); ++i)
                     {
-                        if (headVectorIDS.count(i) > 0) continue;
+                        // if (headVectorIDS.count(i) > 0) continue; //MYS7
                         ++replicaCountDist[replicaCount[i]];
                     }
 
@@ -566,7 +601,7 @@ namespace SPTAG
 
                     std::size_t selectIdx = std::lower_bound(selections.m_selections.begin(), selections.m_selections.end(), i, Selection::g_edgeComparer) - selections.m_selections.begin();
 
-                    for (size_t dropID = postingSizeLimit; dropID < postingListSize[i]; ++dropID)
+                    for (size_t dropID = postingSizeLimit; dropID < postingListSize[i]; ++dropID)  // MYS7 裁剪掉多余的，从postingSizeLimit开始去掉后面的
                     {
                         int tonode = selections.m_selections[selectIdx + dropID].tonode;
                         --replicaCount[tonode];
@@ -574,7 +609,7 @@ namespace SPTAG
                     postingListSize[i] = postingSizeLimit;
                 }
 
-                if (p_opt.m_outputEmptyReplicaID)
+                if (p_opt.m_outputEmptyReplicaID) // MYS7输出一下没有重复的ID
                 {
                     std::vector<int> replicaCountDist(p_opt.m_replicaCount + 1, 0);
                     auto ptr = SPTAG::f_createIO();
@@ -1338,3 +1373,4 @@ namespace SPTAG
 } // namespace SPTAG
 
 #endif // _SPTAG_SPANN_EXTRASTATICSEARCHER_H_
+

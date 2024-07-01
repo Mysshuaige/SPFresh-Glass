@@ -18,95 +18,53 @@ if __name__ == "__main__":
 
     # Read topk vector one by one
     vecs = []
-    row_bin = "";
-    dim_bin = ""; 
     with open(args.src, "rb") as f:
+        row = int.from_bytes(f.read(4), byteorder='little')
+        dim = int.from_bytes(f.read(4), byteorder='little')
 
-        row_bin = f.read(4)
-        assert row_bin != b''
-        row, = struct.unpack('i', row_bin)
-
-        dim_bin = f.read(4)
-        assert dim_bin != b''
-        dim, = struct.unpack('i', dim_bin)
-
-        i = 0
-        while 1:
-
-            # The next dim byte is for a vector for spacev
-            vec = struct.unpack('b' * dim, f.read(dim))
-            
-            # Store it
+        for _ in range(row):
+            vec = np.frombuffer(f.read(dim), dtype=np.int8)
             vecs.append(vec)
-            i += 1
-            if i == row:
-                break
-    
-    # clustering vectors
-            
-    vecs = np.array(vecs, dtype=np.int8)
+
+    # Clustering vectors
+    vecs = np.array(vecs)
     assert vecs.shape[0] == row
     print("vecs.shape:", vecs.shape)
     estimator = KMeans(n_clusters=clusters)
     estimator.fit(vecs)
-    label_pred = estimator.labels_ 
+    label_pred = estimator.labels_
 
-    print("cluster finished")
-    #print(sklearn.metrics.silhouette_score(vecs, label_pred, metric='euclidean'))
+    print("Clustering finished")
+    # print(sklearn.metrics.silhouette_score(vecs, label_pred, metric='euclidean'))
 
-    # generate result
-    vec_list = []
-    vec_num_list = []
-    for i in range(0, clusters):
-        vec_num_list.append(0)
+    # Generate result
+    vec_list = [[] for _ in range(clusters)]
+    vec_num_list = [0] * clusters
 
-    for i in range(0, clusters):
-        with open(args.src, "rb") as f:
+    with open(args.src, "rb") as f:
+        row = int.from_bytes(f.read(4), byteorder='little')
+        dim = int.from_bytes(f.read(4), byteorder='little')
 
-            row_bin = f.read(4)
-            assert row_bin != b''
-            row, = struct.unpack('i', row_bin)
+        for j in range(row):
+            vec = np.frombuffer(f.read(dim), dtype=np.int8)
+            cluster_idx = label_pred[j]
+            vec_list[cluster_idx].append(vec.tobytes())
+            vec_num_list[cluster_idx] += 1
+            if (j + 1) % 100000 == 0:
+                print(j + 1)
 
-            dim_bin = f.read(4)
-            assert dim_bin != b''
-            dim, = struct.unpack('i', dim_bin)
+    print("Cluster_result: ", vec_num_list)
 
-            j = 0
-
-            vecs = ""
-
-            while 1:
-
-                
-                # The next dim byte is for a vector for spacev
-
-                if label_pred[j] == i:
-                    vecs += f.read(dim)
-                    vec_num_list[label_pred[j]] += 1
-                else:
-                    f.read(dim)
-
-                j += 1
-
-                if j % 100000 == 0:
-                    print(j)
-
-                if j == row:
-                    break
-            vec_list.append(vecs)
-
-    print("cluster_result: ", vec_num_list)
-
-    for i in range(0, clusters):
+    for i in range(clusters):
         with open(args.dst + str(i), "wb") as f:
             f.write(struct.pack('i', vec_num_list[i]))
-            f.write(dim_bin)
-            f.write(vec_list[i])
+            f.write(struct.pack('i', dim))
+            for vec in vec_list[i]:
+                f.write(vec)
 
     with open(args.dst + str(clusters), "wb") as f:
         f.write(struct.pack('i', row))
-        f.write(dim_bin)
-        for i in range(0, clusers):
-            f.write(vec_list[i])
-    
-
+        f.write(struct.pack('i', dim))
+        for i in range(clusters):
+            for vec in vec_list[i]:
+                f.write(vec)

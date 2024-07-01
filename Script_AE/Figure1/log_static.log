@@ -1,0 +1,582 @@
+[1] Using AVX512 InstructionSet!
+[1] Setting Dim with value 128
+[1] Setting DistCalcMethod with value L2
+[1] Setting GenerateTruth with value false
+[1] Setting HeadIndexFolder with value head_index
+[1] Setting HeadVectorIDs with value head_vectors_ID_UInt8_L2_base_DEFUALT.bin
+[1] Setting HeadVectors with value head_vectors_UInt8_L2_base_DEFUALT.bin
+[1] Setting IndexAlgoType with value BKT
+[1] Setting IndexDirectory with value /home/sosp/data/store_sift_cluster_2m
+[1] Setting QueryDelimiter with value 
+[1] Setting QueryPath with value /home/sosp/data/sift_data/query.public.10K.u8bin
+[1] Setting QuerySize with value 10000
+[1] Setting QueryType with value DEFAULT
+[1] Setting TruthPath with value /home/sosp/data/sift_data/bigann2m_update_clustering_origin_truth0
+[1] Setting TruthType with value DEFAULT
+[1] Setting ValueType with value UInt8
+[1] Setting VectorDelimiter with value 
+[1] Setting VectorPath with value /home/sosp/data/sift_data/bigann2m_update_clustering
+[1] Setting VectorSize with value 2000000
+[1] Setting VectorType with value DEFAULT
+[1] Setting WarmupDelimiter with value 
+[1] Setting WarmupPath with value 
+[1] Setting WarmupSize with value 10000
+[1] Setting WarmupType with value DEFAULT
+[1] Setting AnalyzeOnly with value false
+[1] Setting BKTKmeansK with value 32
+[1] Setting BKTLeafSize with value 8
+[1] Setting CalcStd with value true
+[1] Setting isExecute with value false
+[1] Setting NoOutput with value false
+[1] Setting NumberOfThreads with value 80
+[1] Setting PrintSizeCount with value true
+[1] Setting Ratio with value 0.15
+[1] Setting RecursiveCheckSmallCluster with value true
+[1] Setting SamplesNumber with value 1000
+[1] Setting SaveBKT with value false
+[1] Setting SelectDynamically with value true
+[1] Setting SelectThreshold with value 12
+[1] Setting SplitFactor with value 9
+[1] Setting SplitThreshold with value 18
+[1] Setting TreeNumber with value 1
+[1] Setting AddCEF with value 500
+[1] Setting AddCountForRebuild with value 1000
+[1] Setting BKTKmeansK with value 32
+[1] Setting BKTLambdaFactor with value 100.000000
+[1] Setting BKTLeafSize with value 8
+[1] Setting BKTNumber with value 1
+[1] Setting CEF with value 1000
+[1] Setting DataBlockSize with value 1048576
+[1] Setting DataCapacity with value 2147483647
+[1] Setting DeletePercentageForRefine with value 0.400000
+[1] Setting DeleteVectorFilePath with value deletes.bin
+[1] Setting DistCalcMethod with value L2
+[1] Setting EnableBfs with value 0
+[1] Setting EnableRebuild with value 1
+[1] Setting GPUGraphType with value 2
+[1] Setting GPULeafSize with value 500
+[1] Setting GPURefineDepth with value 30
+[1] Setting GPURefineSteps with value 0
+[1] Setting GraphCEFScale with value 2.000000
+[1] Setting GraphFilePath with value graph.bin
+[1] Setting GraphNeighborhoodScale with value 2.000000
+[1] Setting HashTableExponent with value 2
+[1] Setting HeadNumGPUs with value 1
+[1] Setting isExecute with value false
+[1] Setting MaxCheck with value 4096
+[1] Setting MaxCheckForRefineGraph with value 8192
+[1] Setting MetaRecordSize with value 10
+[1] Setting NeighborhoodSize with value 32
+[1] Setting NumberOfInitialDynamicPivots with value 50
+[1] Setting NumberOfOtherDynamicPivots with value 4
+[1] Setting NumberOfThreads with value 80
+[1] Setting NumTopDimensionTpTreeSplit with value 5
+[1] Setting RefineIterations with value 2
+[1] Setting RNGFactor with value 1.000000
+[1] Setting Samples with value 1000
+[1] Setting ThresholdOfNumberOfContinuousNoBetterPropagation with value 3
+[1] Setting TPTBalanceFactor with value 2
+[1] Setting TPTLeafSize with value 2000
+[1] Setting TPTNumber with value 32
+[1] Setting TreeFilePath with value tree.bin
+[1] Setting VectorFilePath with value vectors.bin
+[1] Setting AppendThreadNum with value 8
+[1] Setting BuildSsdIndex with value false
+[1] Setting CalTruth with value true
+[1] Setting Days with value -1
+[1] Setting DeleteQPS with value 16000
+[1] Setting DisableReassign with value false
+[1] Setting ExcludeHead with value true
+[1] Setting FullVectorPath with value /home/sosp/data/sift_data/bigann2m_update_clustering
+[1] Setting InsertThreadNum with value 1
+[1] Setting InternalResultNum with value 64
+[1] Setting isExecute with value true
+[1] Setting LatencyLimit with value 9.0
+[1] Setting LoadAllVectors with value true
+[1] Setting MaxDistRatio with value 1000000
+[1] Setting MaxInternalResultNum with value 128
+[1] Setting MergeThreshold with value -1
+[1] Setting MinInternalResultNum with value 16
+[1] Setting NumberOfThreads with value 10
+[1] Setting OnlySearchFinalBatch with value false
+[1] Setting OutputEmptyReplicaID with value 1
+[1] Setting PostingPageLimit with value 3
+[1] Setting ReassignK with value 0
+[1] Setting ReassignThreadNum with value 0
+[1] Setting ReplicaCount with value 8
+[1] Setting ResultNum with value 10
+[1] Setting Sampling with value 2
+[1] Setting SearchDuringUpdate with value false
+[1] Setting SearchInternalResultNum with value 64
+[1] Setting SearchPostingPageLimit with value 4
+[1] Setting SearchThreadNum with value 4
+[1] Setting SearchTimes with value 1
+[1] Setting ShowUpdateProgress with value false
+[1] Setting SpdkBatchSize with value 64
+[1] Setting SteadyState with value true
+[1] Setting Step with value 950589
+[1] Setting StepInternalResultNum with value 16
+[1] Setting TmpDir with value /home/sosp/data/store_sift_cluster/tmpdir
+[1] Setting TruthFilePrefix with value /home/sosp/data/sift_data/bigann2m_update_clustering_origin_truth
+[1] Setting Update with value true
+[1] Setting UpdateFilePrefix with value /home/sosp/data/sift_data/bigann1m_update_clustering_trace
+[1] Setting UseDirectIO with value true
+[1] Setting UseSPDK with value true
+[1] Load Vector (300026,128) Finish!
+[1] Load BKT (1,300028) Finish!
+[1] Load RNG (300026,32) Finish!
+[1] Load DeleteID (300026,1) Finish!
+[1] Setting NumberOfThreads with value 10
+[1] Setting MaxCheck with value 4096
+[1] Setting HashTableExponent with value 4
+SPDKIO::BlockController::SpdkStart: using bdev Nvme0n1
+[1] Posting size limit: 92, search limit: 9.000000, merge threshold: -1
+[1] DataBlockSize: 1048576, Capacity: 2147483647
+[1] SPFresh: initialize thread pools, append: 8, reassign 0
+[1] SPFresh: finish initialization
+[1] Copying data from static to SPDK
+[1] Finish reading header info, list count 300026, total doc count 2000000, dimension 128, list page offset 879.
+[1] Big page (>4K): list count 210798, total element count 10486391.
+[1] Total Element Count: 12588658
+[1] Page Count Dist: 0 8
+[1] Page Count Dist: 1 89220
+[1] Page Count Dist: 2 173908
+[1] Page Count Dist: 3 36890
+[1] Copy to SPDK: Sent 0.00%...
+[1] Copy to SPDK: Sent 5.46%...
+[1] Copy to SPDK: Sent 10.92%...
+[1] Copy to SPDK: Sent 16.38%...
+[1] Copy to SPDK: Sent 21.84%...
+[1] Copy to SPDK: Sent 27.30%...
+[1] Copy to SPDK: Sent 32.77%...
+[1] Copy to SPDK: Sent 38.23%...
+[1] Copy to SPDK: Sent 43.69%...
+[1] Copy to SPDK: Sent 49.15%...
+[1] Copy to SPDK: Sent 54.61%...
+[1] Copy to SPDK: Sent 60.07%...
+[1] Copy to SPDK: Sent 65.53%...
+[1] Copy to SPDK: Sent 70.99%...
+[1] Copy to SPDK: Sent 76.45%...
+[1] Copy to SPDK: Sent 81.91%...
+[1] Copy to SPDK: Sent 87.37%...
+[1] Copy to SPDK: Sent 92.83%...
+[1] Copy to SPDK: Sent 98.30%...
+[1] Start loading VectorSet...
+[1] Load Vector(2000000,128)
+[1] 
+Load VectorSet(2000000,128).
+[1] Start loading QuerySet...
+[1] Load Vector(10000,128)
+[1] Remain 445087294 blocks, totally 1696 GB
+IOPS: 8.10121k Bandwidth: 31.6453MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 2000000, Deleted: 0 .
+[1] Searching: numThread: 4, numQueries: 10000, searchTimes: 1.
+mysmys total search vectors:6803272,  totalDiskIO:313768, IOPS:231221.812822
+[1] Current time: 0, Searching Times: 1, AvgQPS: 7369.20.
+[1] 
+Ex Elements Count:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 680.327	703.000	899.000	946.000	1023.000	1097.000	1164.000
+[1] 
+Head Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.292	0.291	0.321	0.332	0.357	0.398	2.451
+[1] 
+Setup Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.007	0.007	0.007	0.007	0.007	0.014	0.016
+[1] 
+Comp Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.010	0.010	0.016	0.017	0.021	0.036	0.051
+[1] 
+SPDK Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.201	0.194	0.256	0.278	0.322	0.379	0.462
+[1] 
+Ex Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.249	0.242	0.305	0.327	0.372	0.437	1.358
+[1] 
+Total Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.540	0.538	0.605	0.628	0.675	0.751	3.691
+[1] 
+Total Disk Page Access Distribution(KB):
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 93.876	  97	 122	 127	 137	 145	 155
+[1] 
+Total Disk IO Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 31.377	  32	  38	  39	  42	  43	  44
+[1] 
+[1] Start loading TruthFile...: /home/sosp/data/sift_data/bigann2m_update_clustering_origin_truth0
+[4] K: 10, TruthResultNum: -1
+[4] Truth number is larger than query number(10000)!
+[1] Start Calculating Recall
+[1] stdrecall: 0.161125, maxrecall: 1.00, minrecall: 0.10
+[1] 
+Recall Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Min
+[1] 0.845	0.900	0.600	0.500	0.400	0.200	0.100
+[1] Recall10@10: 0.845215
+[1] Searching: numThread: 4, numQueries: 10000, searchTimes: 1.
+mysmys total search vectors:13003673,  totalDiskIO:623864, IOPS:322910.973085
+[1] Current time: 1, Searching Times: 1, AvgQPS: 5175.98.
+[1] 
+Ex Elements Count:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 1300.367	1350.000	1711.000	1786.000	1911.000	2065.000	2180.000
+[1] 
+Head Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.304	0.302	0.336	0.353	0.402	0.455	2.280
+[1] 
+Setup Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.007	0.007	0.008	0.008	0.008	0.014	0.017
+[1] 
+Comp Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.018	0.018	0.027	0.031	0.068	0.079	0.089
+[1] 
+SPDK Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.399	0.394	0.569	0.609	0.689	0.769	0.936
+[1] 
+Ex Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.466	0.460	0.640	0.681	0.801	0.887	1.095
+[1] 
+Total Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.770	0.768	0.950	0.993	1.111	1.233	3.262
+[1] 
+Total Disk Page Access Distribution(KB):
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 186.768	 194	 237	 246	 263	 280	 296
+[1] 
+Total Disk IO Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 62.386	  65	  75	  77	  80	  84	  86
+[1] 
+[1] Start loading TruthFile...: /home/sosp/data/sift_data/bigann2m_update_clustering_origin_truth0
+[4] K: 10, TruthResultNum: 100
+[4] Truth number is larger than query number(10000)!
+[1] Start Calculating Recall
+[1] stdrecall: 0.111171, maxrecall: 1.00, minrecall: 0.20
+[1] 
+Recall Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Min
+[1] 0.925	1.000	0.800	0.700	0.500	0.400	0.200
+[1] Recall10@10: 0.924530
+[1] Searching: numThread: 4, numQueries: 10000, searchTimes: 1.
+mysmys total search vectors:18909024,  totalDiskIO:932619, IOPS:366307.541241
+[1] Current time: 3, Searching Times: 1, AvgQPS: 3927.73.
+[1] 
+Ex Elements Count:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 1890.902	1967.000	2487.000	2595.000	2778.000	2983.000	3134.000
+[1] 
+Head Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.325	0.317	0.386	0.404	0.432	0.474	2.212
+[1] 
+Setup Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.007	0.007	0.007	0.007	0.007	0.014	0.017
+[1] 
+Comp Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.042	0.029	0.094	0.101	0.110	0.121	0.149
+[1] 
+SPDK Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.589	0.593	0.748	0.787	0.873	0.996	1.149
+[1] 
+Ex Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.690	0.675	0.890	0.932	1.015	1.140	1.323
+[1] 
+Total Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 1.016	1.004	1.230	1.280	1.373	1.487	3.535
+[1] 
+Total Disk Page Access Distribution(KB):
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 279.175	 291	 351	 364	 386	 410	 435
+[1] 
+Total Disk IO Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 93.262	  97	 111	 114	 119	 124	 127
+[1] 
+[1] Start loading TruthFile...: /home/sosp/data/sift_data/bigann2m_update_clustering_origin_truth0
+[4] K: 10, TruthResultNum: 100
+[4] Truth number is larger than query number(10000)!
+[1] Start Calculating Recall
+[1] stdrecall: 0.084016, maxrecall: 1.00, minrecall: 0.40
+[1] 
+Recall Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Min
+[1] 0.955	1.000	0.800	0.800	0.600	0.500	0.400
+[1] Recall10@10: 0.954765
+[1] Searching: numThread: 4, numQueries: 10000, searchTimes: 1.
+mysmys total search vectors:24600693,  totalDiskIO:1240853, IOPS:390819.842520
+[1] Current time: 6, Searching Times: 1, AvgQPS: 3149.61.
+[1] 
+Ex Elements Count:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 2460.069	2560.000	3244.000	3385.000	3601.000	3834.000	4099.000
+[1] 
+Head Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.336	0.331	0.388	0.407	0.440	0.479	2.291
+[1] 
+Setup Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.007	0.007	0.007	0.007	0.007	0.014	0.016
+[1] 
+Comp Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.075	0.081	0.122	0.130	0.143	0.156	0.202
+[1] 
+SPDK Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.785	0.787	1.006	1.061	1.165	1.308	1.508
+[1] 
+Ex Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.931	0.952	1.164	1.219	1.325	1.480	1.677
+[1] 
+Total Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 1.267	1.295	1.507	1.567	1.677	1.862	3.630
+[1] 
+Total Disk Page Access Distribution(KB):
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 371.264	 387	 465	 481	 509	 536	 558
+[1] 
+Total Disk IO Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 124.085	 129	 147	 150	 156	 162	 168
+[1] 
+[1] Start loading TruthFile...: /home/sosp/data/sift_data/bigann2m_update_clustering_origin_truth0
+[4] K: 10, TruthResultNum: 100
+[4] Truth number is larger than query number(10000)!
+[1] Start Calculating Recall
+[1] stdrecall: 0.066693, maxrecall: 1.00, minrecall: 0.40
+[1] 
+Recall Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Min
+[1] 0.970	1.000	0.900	0.800	0.700	0.600	0.400
+[1] Recall10@10: 0.969996
+[1] Searching: numThread: 4, numQueries: 10000, searchTimes: 1.
+mysmys total search vectors:30147139,  totalDiskIO:1548934, IOPS:428711.320232
+[1] Current time: 9, Searching Times: 1, AvgQPS: 2767.78.
+[1] 
+Ex Elements Count:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 3014.714	3137.000	3979.000	4140.000	4413.000	4739.000	5034.000
+[1] 
+Head Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.326	0.323	0.366	0.385	0.423	0.509	2.244
+[1] 
+Setup Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.007	0.007	0.007	0.007	0.007	0.014	0.015
+[1] 
+Comp Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.084	0.085	0.125	0.141	0.164	0.179	0.208
+[1] 
+SPDK Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.950	0.966	1.164	1.223	1.352	1.489	1.581
+[1] 
+Ex Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 1.116	1.138	1.335	1.396	1.525	1.668	1.788
+[1] 
+Total Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 1.442	1.471	1.668	1.731	1.858	2.025	3.905
+[1] 
+Total Disk Page Access Distribution(KB):
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 463.319	 483	 578	 597	 628	 667	 694
+[1] 
+Total Disk IO Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 154.893	 161	 183	 187	 194	 201	 209
+[1] 
+[1] Start loading TruthFile...: /home/sosp/data/sift_data/bigann2m_update_clustering_origin_truth0
+[4] K: 10, TruthResultNum: 100
+[4] Truth number is larger than query number(10000)!
+[1] Start Calculating Recall
+[1] stdrecall: 0.055550, maxrecall: 1.00, minrecall: 0.40
+[1] 
+Recall Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Min
+[1] 0.978	1.000	0.900	0.900	0.700	0.600	0.400
+[1] Recall10@10: 0.978247
+[1] Searching: numThread: 4, numQueries: 10000, searchTimes: 1.
+mysmys total search vectors:35570323,  totalDiskIO:1856831, IOPS:443263.547386
+[1] Current time: 13, Searching Times: 1, AvgQPS: 2387.20.
+[1] 
+Ex Elements Count:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 3557.032	3707.000	4707.000	4905.000	5208.000	5611.000	5944.000
+[1] 
+Head Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.332	0.330	0.370	0.385	0.419	0.498	2.341
+[1] 
+Setup Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.007	0.007	0.007	0.007	0.007	0.014	0.015
+[1] 
+Comp Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.090	0.091	0.120	0.132	0.169	0.208	0.242
+[1] 
+SPDK Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 1.158	1.171	1.440	1.504	1.627	1.775	1.902
+[1] 
+Ex Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 1.341	1.353	1.638	1.704	1.832	1.981	2.226
+[1] 
+Total Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 1.673	1.691	1.973	2.040	2.169	2.371	4.428
+[1] 
+Total Disk Page Access Distribution(KB):
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 555.349	 579	 691	 713	 748	 795	 834
+[1] 
+Total Disk IO Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 185.683	 193	 218	 223	 231	 240	 246
+[1] 
+[1] Start loading TruthFile...: /home/sosp/data/sift_data/bigann2m_update_clustering_origin_truth0
+[4] K: 10, TruthResultNum: 100
+[4] Truth number is larger than query number(10000)!
+[1] Start Calculating Recall
+[1] stdrecall: 0.046760, maxrecall: 1.00, minrecall: 0.40
+[1] 
+Recall Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Min
+[1] 0.984	1.000	0.900	0.900	0.800	0.600	0.400
+[1] Recall10@10: 0.984048
+[1] Searching: numThread: 4, numQueries: 10000, searchTimes: 1.
+mysmys total search vectors:40885595,  totalDiskIO:2164411, IOPS:462184.710656
+[1] Current time: 17, Searching Times: 1, AvgQPS: 2135.38.
+[1] 
+Ex Elements Count:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 4088.559	4260.000	5411.000	5629.000	5987.000	6443.000	6831.000
+[1] 
+Head Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.330	0.330	0.363	0.375	0.398	0.455	2.241
+[1] 
+Setup Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.007	0.007	0.007	0.007	0.007	0.014	0.015
+[1] 
+Comp Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.096	0.099	0.129	0.137	0.160	0.224	0.280
+[1] 
+SPDK Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 1.339	1.360	1.625	1.699	1.859	2.043	2.186
+[1] 
+Ex Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 1.540	1.565	1.845	1.926	2.087	2.273	2.799
+[1] 
+Total Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 1.870	1.904	2.179	2.256	2.419	2.613	4.963
+[1] 
+Total Disk Page Access Distribution(KB):
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 647.232	 675	 802	 827	 870	 922	 963
+[1] 
+Total Disk IO Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 216.441	 225	 254	 259	 268	 279	 285
+[1] 
+[1] Start loading TruthFile...: /home/sosp/data/sift_data/bigann2m_update_clustering_origin_truth0
+[4] K: 10, TruthResultNum: 100
+[4] Truth number is larger than query number(10000)!
+[1] Start Calculating Recall
+[1] stdrecall: 0.040473, maxrecall: 1.00, minrecall: 0.60
+[1] 
+Recall Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Min
+[1] 0.987	1.000	0.900	0.900	0.800	0.700	0.600
+[1] Recall10@10: 0.987468
+[1] Searching: numThread: 4, numQueries: 10000, searchTimes: 1.
+mysmys total search vectors:46103948,  totalDiskIO:2471630, IOPS:469713.036868
+[1] Current time: 22, Searching Times: 1, AvgQPS: 1900.42.
+[1] 
+Ex Elements Count:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 4610.395	4801.000	6107.000	6347.000	6767.000	7310.000	7772.000
+[1] 
+Head Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.338	0.339	0.373	0.383	0.408	0.496	2.195
+[1] 
+Setup Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.007	0.007	0.007	0.007	0.007	0.014	0.032
+[1] 
+Comp Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.108	0.112	0.147	0.156	0.182	0.272	0.297
+[1] 
+SPDK Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 1.537	1.565	1.877	1.955	2.094	2.305	2.489
+[1] 
+Ex Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 1.762	1.795	2.127	2.212	2.353	2.565	3.117
+[1] 
+Total Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 2.100	2.141	2.470	2.556	2.698	2.966	5.276
+[1] 
+Total Disk Page Access Distribution(KB):
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 738.988	 770	 914	 941	 990	1046	1104
+[1] 
+Total Disk IO Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 247.163	 257	 289	 296	 305	 317	 326
+[1] 
+[1] Start loading TruthFile...: /home/sosp/data/sift_data/bigann2m_update_clustering_origin_truth0
+[4] K: 10, TruthResultNum: 100
+[4] Truth number is larger than query number(10000)!
+[1] Start Calculating Recall
+[1] stdrecall: 0.035795, maxrecall: 1.00, minrecall: 0.60
+[1] 
+Recall Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Min
+[1] 0.990	1.000	1.000	0.900	0.800	0.700	0.600
+[1] Recall10@10: 0.990009
+[1] Current time: 27. RSS : 5762 MB, Vector Set Size : 244 MB, True Size: 5518 MB
+[1] Remain 445087294 blocks, totally 1696 GB
+IOPS: 411.437k Bandwidth: 1607.18MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 2000000, Deleted: 0 .
+[1] Updating: numThread: 1, total days: -1.
+[1] Start updating...
+[1] Save mapping To 
+SPDKIO::BlockController::SpdkStop: finalized

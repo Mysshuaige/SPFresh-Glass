@@ -121,10 +121,11 @@ option(ROCKSDB "ROCKSDB" ON)
 if (ROCKSDB)
     add_definitions(-DROCKSDB)
 endif()
-
+include_directories(${PROJECT_SOURCE_DIR}/pyglass)
 add_subdirectory (ThirdParty/zstd/build/cmake)
-
+add_subdirectory (pyglass)
 add_subdirectory (AnnService)
 add_subdirectory (Test)
 add_subdirectory (GPUSupport)
 add_subdirectory (Wrappers)
+

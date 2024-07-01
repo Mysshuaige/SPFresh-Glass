@@ -27,6 +27,7 @@
 
 #include <functional>
 #include <shared_mutex>
+#include <cassert>
 
 namespace SPTAG
 {
@@ -35,6 +36,22 @@ namespace SPTAG
     {
         class IniReader;
     }
+    // MYS2 Build glass index
+    struct Item {
+        uint32_t n;
+        uint32_t d;
+        std::vector<uint8_t> data;
+
+        float* getRawData(){
+            float* float_array = static_cast<float*>(malloc(data.size() * sizeof(float)));
+            for (size_t i = 0; i < data.size(); ++i) {
+                // 将 uint8_t 值直接转换为 float 值
+                float_array[i] = static_cast<float>(data[i]);
+            }
+            return float_array;
+        }
+
+    };
 
     namespace SPANN
     {
@@ -126,6 +143,8 @@ namespace SPTAG
             ErrorCode BuildIndex(bool p_normalized = false);
             ErrorCode SearchIndex(QueryResult &p_query, bool p_searchDeleted = false) const;
             ErrorCode SearchDiskIndex(QueryResult& p_query, SearchStats* p_stats = nullptr) const;
+	        // ErrorCode SearchDiskIndex(QueryResult& p_query, SearchStats* p_stats = nullptr, const std::vector<SizeType>& DiskQueryset = {}) const;
+
             ErrorCode DebugSearchDiskIndex(QueryResult& p_query, int p_subInternalResultNum, int p_internalResultNum,
                 SearchStats* p_stats = nullptr, std::set<int>* truth = nullptr, std::map<int, std::set<int>>* found = nullptr) const;
             ErrorCode UpdateIndex();
@@ -219,6 +238,29 @@ namespace SPTAG
                 }
 
                 return m_extraSearcher->AddIndex(vectorSet, m_index, begin);
+            }
+            // MYS2 Build glass index 加载头索引数据
+	        static Item LoadHeadVectors_mys(std::string headVectorPath, int maxn = -1) {
+                std::ifstream file(headVectorPath, std::ios::binary);
+                assert(file.is_open() && "Failed to open file");
+                uint32_t n, d;
+                file.read(reinterpret_cast<char*>(&n), sizeof(uint32_t));
+                file.read(reinterpret_cast<char*>(&d), sizeof(uint32_t));
+
+                std::cout << "总数：" << n << ";维度：" << d << std::endl;
+
+                file.seekg(0, std::ios::end);
+
+                //assert(file.tellg() == static_cast<std::streampos>(8 + n * d * sizeof(uint8_t)) && "File size mismatch");
+
+                if (maxn > 0) {
+                    n = std::min(n, static_cast<uint32_t>(maxn));
+                }
+                std::vector<uint8_t> data(n * d);
+                file.seekg(8);
+                file.read(reinterpret_cast<char*>(data.data()), n * d * sizeof(uint8_t));
+                file.close();
+                return {n, d, data};
             }
         };
     } // namespace SPANN

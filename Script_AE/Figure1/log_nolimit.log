@@ -1,0 +1,2229 @@
+[1] Using AVX512 InstructionSet!
+[1] Setting Dim with value 128
+[1] Setting DistCalcMethod with value L2
+[1] Setting GenerateTruth with value false
+[1] Setting HeadIndexFolder with value head_index
+[1] Setting HeadVectorIDs with value head_vectors_ID_UInt8_L2_base_DEFUALT.bin
+[1] Setting HeadVectors with value head_vectors_UInt8_L2_base_DEFUALT.bin
+[1] Setting IndexAlgoType with value BKT
+[1] Setting IndexDirectory with value /home/sosp/data/store_sift_cluster
+[1] Setting QueryDelimiter with value 
+[1] Setting QueryPath with value /home/sosp/data/sift_data/query.public.10K.u8bin
+[1] Setting QuerySize with value 10000
+[1] Setting QueryType with value DEFAULT
+[1] Setting TruthPath with value /home/sosp/data/sift_data/bigann1m_update_clustering_origin_truth
+[1] Setting TruthType with value DEFAULT
+[1] Setting ValueType with value UInt8
+[1] Setting VectorDelimiter with value 
+[1] Setting VectorPath with value /home/sosp/data/sift_data/bigann1m_update_clustering
+[1] Setting VectorSize with value 1049411
+[1] Setting VectorType with value DEFAULT
+[1] Setting WarmupDelimiter with value 
+[1] Setting WarmupPath with value 
+[1] Setting WarmupSize with value 10000
+[1] Setting WarmupType with value DEFAULT
+[1] Setting AnalyzeOnly with value false
+[1] Setting BKTKmeansK with value 32
+[1] Setting BKTLeafSize with value 8
+[1] Setting CalcStd with value true
+[1] Setting isExecute with value false
+[1] Setting NoOutput with value false
+[1] Setting NumberOfThreads with value 80
+[1] Setting PrintSizeCount with value true
+[1] Setting Ratio with value 0.15
+[1] Setting RecursiveCheckSmallCluster with value true
+[1] Setting SamplesNumber with value 1000
+[1] Setting SaveBKT with value false
+[1] Setting SelectDynamically with value true
+[1] Setting SelectThreshold with value 12
+[1] Setting SplitFactor with value 9
+[1] Setting SplitThreshold with value 18
+[1] Setting TreeNumber with value 1
+[1] Setting AddCEF with value 500
+[1] Setting AddCountForRebuild with value 1000
+[1] Setting BKTKmeansK with value 32
+[1] Setting BKTLambdaFactor with value 100.000000
+[1] Setting BKTLeafSize with value 8
+[1] Setting BKTNumber with value 1
+[1] Setting CEF with value 1000
+[1] Setting DataBlockSize with value 1048576
+[1] Setting DataCapacity with value 2147483647
+[1] Setting DeletePercentageForRefine with value 0.400000
+[1] Setting DeleteVectorFilePath with value deletes.bin
+[1] Setting DistCalcMethod with value L2
+[1] Setting EnableBfs with value 0
+[1] Setting EnableRebuild with value 1
+[1] Setting GPUGraphType with value 2
+[1] Setting GPULeafSize with value 500
+[1] Setting GPURefineDepth with value 30
+[1] Setting GPURefineSteps with value 0
+[1] Setting GraphCEFScale with value 2.000000
+[1] Setting GraphFilePath with value graph.bin
+[1] Setting GraphNeighborhoodScale with value 2.000000
+[1] Setting HashTableExponent with value 2
+[1] Setting HeadNumGPUs with value 1
+[1] Setting isExecute with value false
+[1] Setting MaxCheck with value 4096
+[1] Setting MaxCheckForRefineGraph with value 8192
+[1] Setting MetaRecordSize with value 10
+[1] Setting NeighborhoodSize with value 32
+[1] Setting NumberOfInitialDynamicPivots with value 50
+[1] Setting NumberOfOtherDynamicPivots with value 4
+[1] Setting NumberOfThreads with value 80
+[1] Setting NumTopDimensionTpTreeSplit with value 5
+[1] Setting RefineIterations with value 2
+[1] Setting RNGFactor with value 1.000000
+[1] Setting Samples with value 1000
+[1] Setting ThresholdOfNumberOfContinuousNoBetterPropagation with value 3
+[1] Setting TPTBalanceFactor with value 2
+[1] Setting TPTLeafSize with value 2000
+[1] Setting TPTNumber with value 32
+[1] Setting TreeFilePath with value tree.bin
+[1] Setting VectorFilePath with value vectors.bin
+[1] Setting AppendThreadNum with value 8
+[1] Setting BuildSsdIndex with value false
+[1] Setting CalTruth with value true
+[1] Setting Days with value 1
+[1] Setting DeleteQPS with value 16000
+[1] Setting DisableReassign with value true
+[1] Setting ExcludeHead with value true
+[1] Setting FullVectorPath with value /home/sosp/data/sift_data/bigann2m_update_clustering
+[1] Setting InsertThreadNum with value 1
+[1] Setting InternalResultNum with value 64
+[1] Setting isExecute with value true
+[1] Setting LatencyLimit with value 100.0
+[1] Setting LoadAllVectors with value true
+[1] Setting MaxDistRatio with value 1000000
+[1] Setting MaxInternalResultNum with value 128
+[1] Setting MergeThreshold with value -1
+[1] Setting MinInternalResultNum with value 16
+[1] Setting NumberOfThreads with value 10
+[1] Setting OnlySearchFinalBatch with value true
+[1] Setting OutputEmptyReplicaID with value 1
+[1] Setting PostingPageLimit with value 300
+[1] Setting ReassignK with value 0
+[1] Setting ReassignThreadNum with value 0
+[1] Setting ReplicaCount with value 8
+[1] Setting ResultNum with value 10
+[1] Setting Sampling with value 2
+[1] Setting SearchDuringUpdate with value false
+[1] Setting SearchInternalResultNum with value 64
+[1] Setting SearchPostingPageLimit with value 300
+[1] Setting SearchThreadNum with value 4
+[1] Setting SearchTimes with value 1
+[1] Setting ShowUpdateProgress with value false
+[1] Setting SpdkBatchSize with value 64
+[1] Setting Step with value 950589
+[1] Setting StepInternalResultNum with value 16
+[1] Setting TmpDir with value /home/sosp/data/store_sift_cluster/tmpdir
+[1] Setting TruthFilePrefix with value /home/sosp/data/sift_data/bigann2m_update_clustering_origin_truth
+[1] Setting Update with value true
+[1] Setting UpdateFilePrefix with value /home/sosp/data/sift_data/bigann1m_update_clustering_trace
+[1] Setting UseDirectIO with value true
+[1] Setting UseSPDK with value true
+[1] Load Vector (157644,128) Finish!
+[1] Load BKT (1,157646) Finish!
+[1] Load RNG (157644,32) Finish!
+[1] Load DeleteID (157644,1) Finish!
+[1] Setting NumberOfThreads with value 10
+[1] Setting MaxCheck with value 4096
+[1] Setting HashTableExponent with value 4
+SPDKIO::BlockController::SpdkStart: using bdev Nvme0n1
+[1] Posting size limit: 9239, search limit: 100.000000, merge threshold: -1
+[1] DataBlockSize: 1048576, Capacity: 2147483647
+[1] SPFresh: initialize thread pools, append: 8, reassign 0
+[1] SPFresh: finish initialization
+[1] Copying data from static to SPDK
+[1] Finish reading header info, list count 157644, total doc count 1049411, dimension 128, list page offset 462.
+[1] Big page (>4K): list count 100335, total element count 4781550.
+[1] Total Element Count: 6108728
+[1] Page Count Dist: 0 1
+[1] Page Count Dist: 1 57308
+[1] Page Count Dist: 2 87248
+[1] Page Count Dist: 3 13087
+[1] Copy to SPDK: Sent 0.00%...
+[1] Copy to SPDK: Sent 10.39%...
+[1] Copy to SPDK: Sent 20.79%...
+[1] Copy to SPDK: Sent 31.18%...
+[1] Copy to SPDK: Sent 41.57%...
+[1] Copy to SPDK: Sent 51.97%...
+[1] Copy to SPDK: Sent 62.36%...
+[1] Copy to SPDK: Sent 72.75%...
+[1] Copy to SPDK: Sent 83.14%...
+[1] Copy to SPDK: Sent 93.54%...
+[1] Start loading VectorSet...
+[1] Load Vector(2000000,128)
+[1] 
+Load VectorSet(2000000,128).
+[1] Start loading QuerySet...
+[1] Load Vector(10000,128)
+[1] Remain 445367613 blocks, totally 1696 GB
+IOPS: 6.93673k Bandwidth: 27.0966MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1049411, Deleted: 0 .
+[1] Current time: 0. RSS : 6029 MB, Vector Set Size : 244 MB, True Size: 5785 MB
+[1] Remain 445367613 blocks, totally 1696 GB
+IOPS: 0k Bandwidth: 0MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1049411, Deleted: 0 .
+[1] Updating: numThread: 1, step: 950589, insertCount: 950589, totalBatch: 1.
+[1] Start updating...
+[1] Updating Batch 0: numThread: 1, step: 950589.
+[1] Sent 0.00%...
+[1] Current time: 3. RSS : 6046 MB, Vector Set Size : 244 MB, True Size: 5802 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445366806 blocks, totally 1696 GB
+IOPS: 16.7624k Bandwidth: 65.4781MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1052933, Deleted: 0 .
+[1] Current time: 6. RSS : 6046 MB, Vector Set Size : 244 MB, True Size: 5802 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445365985 blocks, totally 1696 GB
+IOPS: 17.0528k Bandwidth: 66.6124MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1056551, Deleted: 0 .
+[1] Current time: 9. RSS : 6047 MB, Vector Set Size : 244 MB, True Size: 5803 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445365220 blocks, totally 1696 GB
+IOPS: 16.6347k Bandwidth: 64.9794MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1060013, Deleted: 0 .
+[1] Current time: 12. RSS : 6047 MB, Vector Set Size : 244 MB, True Size: 5803 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445364406 blocks, totally 1696 GB
+IOPS: 17.5049k Bandwidth: 68.3786MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1063698, Deleted: 0 .
+[1] Sent 1.72%...
+[1] Current time: 15. RSS : 6047 MB, Vector Set Size : 244 MB, True Size: 5803 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445363633 blocks, totally 1696 GB
+IOPS: 16.7854k Bandwidth: 65.5679MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1067340, Deleted: 0 .
+[1] Current time: 18. RSS : 6048 MB, Vector Set Size : 244 MB, True Size: 5804 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445362818 blocks, totally 1696 GB
+IOPS: 17.1116k Bandwidth: 66.8421MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1071106, Deleted: 0 .
+[1] Current time: 21. RSS : 6048 MB, Vector Set Size : 244 MB, True Size: 5804 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445361937 blocks, totally 1696 GB
+IOPS: 17.3707k Bandwidth: 67.8543MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1074754, Deleted: 0 .
+[1] Current time: 24. RSS : 6048 MB, Vector Set Size : 244 MB, True Size: 5804 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445361155 blocks, totally 1696 GB
+IOPS: 16.7991k Bandwidth: 65.6213MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1078284, Deleted: 0 .
+[1] Current time: 27. RSS : 6049 MB, Vector Set Size : 244 MB, True Size: 5805 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445360350 blocks, totally 1696 GB
+IOPS: 16.7632k Bandwidth: 65.4813MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1081911, Deleted: 0 .
+[1] Sent 3.45%...
+[1] Current time: 30. RSS : 6049 MB, Vector Set Size : 244 MB, True Size: 5805 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445359544 blocks, totally 1696 GB
+IOPS: 16.791k Bandwidth: 65.5898MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1085480, Deleted: 0 .
+[1] Current time: 33. RSS : 6049 MB, Vector Set Size : 244 MB, True Size: 5805 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445358767 blocks, totally 1696 GB
+IOPS: 16.622k Bandwidth: 64.9297MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1089015, Deleted: 0 .
+[1] Current time: 36. RSS : 6050 MB, Vector Set Size : 244 MB, True Size: 5806 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445357904 blocks, totally 1696 GB
+IOPS: 18.5012k Bandwidth: 72.2702MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1092852, Deleted: 0 .
+[1] Current time: 39. RSS : 6050 MB, Vector Set Size : 244 MB, True Size: 5806 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445357096 blocks, totally 1696 GB
+IOPS: 17.1769k Bandwidth: 67.0974MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1096492, Deleted: 0 .
+[1] Sent 5.17%...
+[1] Current time: 42. RSS : 6051 MB, Vector Set Size : 244 MB, True Size: 5807 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445356248 blocks, totally 1696 GB
+IOPS: 17.0282k Bandwidth: 66.5164MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1100018, Deleted: 0 .
+[1] Current time: 45. RSS : 6051 MB, Vector Set Size : 244 MB, True Size: 5807 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445355457 blocks, totally 1696 GB
+IOPS: 17.0872k Bandwidth: 66.7471MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1103556, Deleted: 0 .
+[1] Current time: 48. RSS : 6051 MB, Vector Set Size : 244 MB, True Size: 5807 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445354689 blocks, totally 1696 GB
+IOPS: 16.5116k Bandwidth: 64.4985MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1107056, Deleted: 0 .
+[1] Current time: 51. RSS : 6052 MB, Vector Set Size : 244 MB, True Size: 5808 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445353911 blocks, totally 1696 GB
+IOPS: 16.6677k Bandwidth: 65.1081MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1110429, Deleted: 0 .
+[1] Current time: 54. RSS : 6052 MB, Vector Set Size : 244 MB, True Size: 5808 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445353171 blocks, totally 1696 GB
+IOPS: 16.7082k Bandwidth: 65.2666MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1113994, Deleted: 0 .
+[1] Sent 6.89%...
+[1] Current time: 57. RSS : 6052 MB, Vector Set Size : 244 MB, True Size: 5808 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445352308 blocks, totally 1696 GB
+IOPS: 17.0949k Bandwidth: 66.777MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1117610, Deleted: 0 .
+[1] Current time: 60. RSS : 6053 MB, Vector Set Size : 244 MB, True Size: 5809 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445351578 blocks, totally 1696 GB
+IOPS: 16.6864k Bandwidth: 65.1811MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1121073, Deleted: 0 .
+[1] Current time: 63. RSS : 6053 MB, Vector Set Size : 244 MB, True Size: 5809 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445350785 blocks, totally 1696 GB
+IOPS: 16.5532k Bandwidth: 64.6611MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1124492, Deleted: 0 .
+[1] Current time: 66. RSS : 6054 MB, Vector Set Size : 244 MB, True Size: 5810 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445349962 blocks, totally 1696 GB
+IOPS: 17.3499k Bandwidth: 67.773MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1128146, Deleted: 0 .
+[1] Sent 8.62%...
+[1] Current time: 69. RSS : 6054 MB, Vector Set Size : 244 MB, True Size: 5810 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445349169 blocks, totally 1696 GB
+IOPS: 16.8006k Bandwidth: 65.6275MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1131737, Deleted: 0 .
+[1] Current time: 72. RSS : 6054 MB, Vector Set Size : 244 MB, True Size: 5810 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445348428 blocks, totally 1696 GB
+IOPS: 16.782k Bandwidth: 65.5546MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1135282, Deleted: 0 .
+[1] Current time: 75. RSS : 6055 MB, Vector Set Size : 244 MB, True Size: 5811 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445347613 blocks, totally 1696 GB
+IOPS: 16.7255k Bandwidth: 65.3341MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1138711, Deleted: 0 .
+[1] Current time: 78. RSS : 6055 MB, Vector Set Size : 244 MB, True Size: 5811 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445346814 blocks, totally 1696 GB
+IOPS: 16.7095k Bandwidth: 65.2716MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1142143, Deleted: 0 .
+[1] Current time: 81. RSS : 6055 MB, Vector Set Size : 244 MB, True Size: 5811 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445346021 blocks, totally 1696 GB
+IOPS: 16.4248k Bandwidth: 64.1593MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1145632, Deleted: 0 .
+[1] Sent 10.34%...
+[1] Current time: 84. RSS : 6056 MB, Vector Set Size : 244 MB, True Size: 5812 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445345201 blocks, totally 1696 GB
+IOPS: 16.7359k Bandwidth: 65.3747MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1149164, Deleted: 0 .
+[1] Current time: 87. RSS : 6056 MB, Vector Set Size : 244 MB, True Size: 5812 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445344405 blocks, totally 1696 GB
+IOPS: 17.0242k Bandwidth: 66.5009MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1152841, Deleted: 0 .
+[1] Current time: 90. RSS : 6056 MB, Vector Set Size : 244 MB, True Size: 5812 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445343535 blocks, totally 1696 GB
+IOPS: 16.8515k Bandwidth: 65.8261MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1156431, Deleted: 0 .
+[1] Current time: 93. RSS : 6057 MB, Vector Set Size : 244 MB, True Size: 5813 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445342735 blocks, totally 1696 GB
+IOPS: 17.0295k Bandwidth: 66.5217MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1159960, Deleted: 0 .
+[1] Current time: 96. RSS : 6057 MB, Vector Set Size : 244 MB, True Size: 5813 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445341931 blocks, totally 1696 GB
+IOPS: 16.8891k Bandwidth: 65.9731MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1163480, Deleted: 0 .
+[1] Sent 12.06%...
+[1] Current time: 99. RSS : 6057 MB, Vector Set Size : 244 MB, True Size: 5813 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445341131 blocks, totally 1696 GB
+IOPS: 16.8165k Bandwidth: 65.6896MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1166971, Deleted: 0 .
+[1] Current time: 102. RSS : 6058 MB, Vector Set Size : 244 MB, True Size: 5814 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445340314 blocks, totally 1696 GB
+IOPS: 16.9056k Bandwidth: 66.0374MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1170646, Deleted: 0 .
+[1] Current time: 105. RSS : 6058 MB, Vector Set Size : 244 MB, True Size: 5814 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445339545 blocks, totally 1696 GB
+IOPS: 16.8129k Bandwidth: 65.6753MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1174157, Deleted: 0 .
+[1] Current time: 108. RSS : 6058 MB, Vector Set Size : 244 MB, True Size: 5814 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445338781 blocks, totally 1696 GB
+IOPS: 16.7652k Bandwidth: 65.4891MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1177691, Deleted: 0 .
+[1] Sent 13.79%...
+[1] Current time: 111. RSS : 6059 MB, Vector Set Size : 244 MB, True Size: 5815 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445337938 blocks, totally 1696 GB
+IOPS: 16.8184k Bandwidth: 65.6967MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1181183, Deleted: 0 .
+[1] Current time: 114. RSS : 6059 MB, Vector Set Size : 244 MB, True Size: 5815 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445337108 blocks, totally 1696 GB
+IOPS: 16.8067k Bandwidth: 65.6512MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1184701, Deleted: 0 .
+[1] Current time: 117. RSS : 6060 MB, Vector Set Size : 244 MB, True Size: 5816 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445336289 blocks, totally 1696 GB
+IOPS: 17.0486k Bandwidth: 66.5959MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1188231, Deleted: 0 .
+[1] Current time: 120. RSS : 6060 MB, Vector Set Size : 244 MB, True Size: 5816 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445335495 blocks, totally 1696 GB
+IOPS: 16.8283k Bandwidth: 65.7354MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1191770, Deleted: 0 .
+[1] Current time: 123. RSS : 6060 MB, Vector Set Size : 244 MB, True Size: 5816 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445334742 blocks, totally 1696 GB
+IOPS: 16.4608k Bandwidth: 64.3MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1195258, Deleted: 0 .
+[1] Sent 15.51%...
+[1] Current time: 126. RSS : 6061 MB, Vector Set Size : 244 MB, True Size: 5817 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445333986 blocks, totally 1696 GB
+IOPS: 16.4773k Bandwidth: 64.3645MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1198705, Deleted: 0 .
+[1] Current time: 129. RSS : 6061 MB, Vector Set Size : 244 MB, True Size: 5817 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445333191 blocks, totally 1696 GB
+IOPS: 16.6382k Bandwidth: 64.993MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1202293, Deleted: 0 .
+[1] Current time: 132. RSS : 6062 MB, Vector Set Size : 244 MB, True Size: 5818 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445332427 blocks, totally 1696 GB
+IOPS: 16.5646k Bandwidth: 64.7053MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1205765, Deleted: 0 .
+[1] Current time: 135. RSS : 6062 MB, Vector Set Size : 244 MB, True Size: 5818 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445331583 blocks, totally 1696 GB
+IOPS: 17.0092k Bandwidth: 66.4423MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1209322, Deleted: 0 .
+[1] Current time: 138. RSS : 6062 MB, Vector Set Size : 244 MB, True Size: 5818 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445330790 blocks, totally 1696 GB
+IOPS: 17.0943k Bandwidth: 66.7746MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1212851, Deleted: 0 .
+[1] Sent 17.24%...
+[1] Current time: 141. RSS : 6063 MB, Vector Set Size : 244 MB, True Size: 5819 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445329956 blocks, totally 1696 GB
+IOPS: 17.0712k Bandwidth: 66.6842MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1216433, Deleted: 0 .
+[1] Current time: 144. RSS : 6063 MB, Vector Set Size : 244 MB, True Size: 5819 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445329154 blocks, totally 1696 GB
+IOPS: 17.3815k Bandwidth: 67.8967MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1220159, Deleted: 0 .
+[1] Current time: 147. RSS : 6063 MB, Vector Set Size : 244 MB, True Size: 5819 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445328355 blocks, totally 1696 GB
+IOPS: 17.0466k Bandwidth: 66.5881MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1223749, Deleted: 0 .
+[1] Current time: 150. RSS : 6064 MB, Vector Set Size : 244 MB, True Size: 5820 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445327556 blocks, totally 1696 GB
+IOPS: 17.0992k Bandwidth: 66.7938MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1227309, Deleted: 0 .
+[1] Sent 18.96%...
+[1] Current time: 153. RSS : 6064 MB, Vector Set Size : 244 MB, True Size: 5820 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445326713 blocks, totally 1696 GB
+IOPS: 17.161k Bandwidth: 67.0351MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1230888, Deleted: 0 .
+[1] Current time: 156. RSS : 6064 MB, Vector Set Size : 244 MB, True Size: 5820 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445325883 blocks, totally 1696 GB
+IOPS: 17.0712k Bandwidth: 66.6843MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1234410, Deleted: 0 .
+[1] Current time: 159. RSS : 6065 MB, Vector Set Size : 244 MB, True Size: 5821 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445325103 blocks, totally 1696 GB
+IOPS: 16.9595k Bandwidth: 66.2482MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1237992, Deleted: 0 .
+[1] Current time: 162. RSS : 6065 MB, Vector Set Size : 244 MB, True Size: 5821 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445324255 blocks, totally 1696 GB
+IOPS: 17.1142k Bandwidth: 66.8524MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1241668, Deleted: 0 .
+[1] Current time: 165. RSS : 6066 MB, Vector Set Size : 244 MB, True Size: 5822 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445323394 blocks, totally 1696 GB
+IOPS: 17.4098k Bandwidth: 68.007MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1245309, Deleted: 0 .
+[1] Sent 20.68%...
+[1] Current time: 168. RSS : 6066 MB, Vector Set Size : 244 MB, True Size: 5822 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445322573 blocks, totally 1696 GB
+IOPS: 16.9608k Bandwidth: 66.2533MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1248915, Deleted: 0 .
+[1] Current time: 171. RSS : 6066 MB, Vector Set Size : 244 MB, True Size: 5822 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445321762 blocks, totally 1696 GB
+IOPS: 17.0719k Bandwidth: 66.6872MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1252542, Deleted: 0 .
+[1] Current time: 174. RSS : 6067 MB, Vector Set Size : 244 MB, True Size: 5823 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445320964 blocks, totally 1696 GB
+IOPS: 16.9597k Bandwidth: 66.2487MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1256026, Deleted: 0 .
+[1] Current time: 177. RSS : 6067 MB, Vector Set Size : 244 MB, True Size: 5823 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445320147 blocks, totally 1696 GB
+IOPS: 17.0508k Bandwidth: 66.6046MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1259592, Deleted: 0 .
+[1] Sent 22.41%...
+[1] Current time: 180. RSS : 6067 MB, Vector Set Size : 244 MB, True Size: 5823 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445319368 blocks, totally 1696 GB
+IOPS: 17.0001k Bandwidth: 66.4068MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1263120, Deleted: 0 .
+[1] Current time: 183. RSS : 6068 MB, Vector Set Size : 244 MB, True Size: 5824 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445318548 blocks, totally 1696 GB
+IOPS: 17.0178k Bandwidth: 66.4758MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1266593, Deleted: 0 .
+[1] Current time: 186. RSS : 6068 MB, Vector Set Size : 244 MB, True Size: 5824 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445317683 blocks, totally 1696 GB
+IOPS: 17.2016k Bandwidth: 67.1938MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1270181, Deleted: 0 .
+[1] Current time: 189. RSS : 6068 MB, Vector Set Size : 244 MB, True Size: 5824 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445316838 blocks, totally 1696 GB
+IOPS: 17.4241k Bandwidth: 68.0629MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1273798, Deleted: 0 .
+[1] Current time: 192. RSS : 6069 MB, Vector Set Size : 244 MB, True Size: 5825 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445315986 blocks, totally 1696 GB
+IOPS: 17.4557k Bandwidth: 68.1865MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1277518, Deleted: 0 .
+[1] Sent 24.13%...
+[1] Current time: 195. RSS : 6069 MB, Vector Set Size : 244 MB, True Size: 5825 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445315149 blocks, totally 1696 GB
+IOPS: 17.3989k Bandwidth: 67.9645MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1281210, Deleted: 0 .
+[1] Current time: 198. RSS : 6069 MB, Vector Set Size : 244 MB, True Size: 5825 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445314298 blocks, totally 1696 GB
+IOPS: 17.6572k Bandwidth: 68.9733MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1284949, Deleted: 0 .
+[1] Current time: 201. RSS : 6070 MB, Vector Set Size : 244 MB, True Size: 5826 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445313437 blocks, totally 1696 GB
+IOPS: 17.6481k Bandwidth: 68.9377MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1288722, Deleted: 0 .
+[1] Current time: 204. RSS : 6070 MB, Vector Set Size : 244 MB, True Size: 5826 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445312660 blocks, totally 1696 GB
+IOPS: 17.2546k Bandwidth: 67.4007MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1292339, Deleted: 0 .
+[1] Sent 25.85%...
+[1] Current time: 207. RSS : 6071 MB, Vector Set Size : 244 MB, True Size: 5827 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445311842 blocks, totally 1696 GB
+IOPS: 17.5777k Bandwidth: 68.6631MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1296019, Deleted: 0 .
+[1] Current time: 210. RSS : 6071 MB, Vector Set Size : 244 MB, True Size: 5827 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445310983 blocks, totally 1696 GB
+IOPS: 17.5735k Bandwidth: 68.6467MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1299717, Deleted: 0 .
+[1] Current time: 213. RSS : 6072 MB, Vector Set Size : 244 MB, True Size: 5828 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445310146 blocks, totally 1696 GB
+IOPS: 17.5771k Bandwidth: 68.6606MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1303372, Deleted: 0 .
+[1] Current time: 216. RSS : 6072 MB, Vector Set Size : 244 MB, True Size: 5828 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445309311 blocks, totally 1696 GB
+IOPS: 17.3609k Bandwidth: 67.8161MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1307100, Deleted: 0 .
+[1] Current time: 219. RSS : 6072 MB, Vector Set Size : 244 MB, True Size: 5828 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445308462 blocks, totally 1696 GB
+IOPS: 17.5633k Bandwidth: 68.6065MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1310787, Deleted: 0 .
+[1] Sent 27.58%...
+[1] Current time: 222. RSS : 6073 MB, Vector Set Size : 244 MB, True Size: 5829 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445307626 blocks, totally 1696 GB
+IOPS: 17.371k Bandwidth: 67.8553MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1314383, Deleted: 0 .
+[1] Current time: 225. RSS : 6073 MB, Vector Set Size : 244 MB, True Size: 5829 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445306809 blocks, totally 1696 GB
+IOPS: 17.517k Bandwidth: 68.4257MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1318062, Deleted: 0 .
+[1] Current time: 228. RSS : 6073 MB, Vector Set Size : 244 MB, True Size: 5829 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445305989 blocks, totally 1696 GB
+IOPS: 17.4964k Bandwidth: 68.3454MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1321683, Deleted: 0 .
+[1] Current time: 231. RSS : 6074 MB, Vector Set Size : 244 MB, True Size: 5830 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445305153 blocks, totally 1696 GB
+IOPS: 17.1531k Bandwidth: 67.0042MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1325345, Deleted: 0 .
+[1] Sent 29.30%...
+[1] Current time: 234. RSS : 6074 MB, Vector Set Size : 244 MB, True Size: 5830 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445304285 blocks, totally 1696 GB
+IOPS: 17.5737k Bandwidth: 68.6474MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1329080, Deleted: 0 .
+[1] Current time: 237. RSS : 6075 MB, Vector Set Size : 244 MB, True Size: 5831 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445303475 blocks, totally 1696 GB
+IOPS: 17.5764k Bandwidth: 68.6578MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1332936, Deleted: 0 .
+[1] Current time: 240. RSS : 6075 MB, Vector Set Size : 244 MB, True Size: 5831 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445302594 blocks, totally 1696 GB
+IOPS: 17.9365k Bandwidth: 70.0644MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1336948, Deleted: 0 .
+[1] Current time: 243. RSS : 6075 MB, Vector Set Size : 244 MB, True Size: 5831 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445301836 blocks, totally 1696 GB
+IOPS: 16.7004k Bandwidth: 65.236MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1340438, Deleted: 0 .
+[1] Current time: 246. RSS : 6076 MB, Vector Set Size : 244 MB, True Size: 5832 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445301045 blocks, totally 1696 GB
+IOPS: 16.6414k Bandwidth: 65.0055MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1343870, Deleted: 0 .
+[1] Sent 31.02%...
+[1] Current time: 249. RSS : 6076 MB, Vector Set Size : 244 MB, True Size: 5832 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445300247 blocks, totally 1696 GB
+IOPS: 16.7464k Bandwidth: 65.4157MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1347440, Deleted: 0 .
+[1] Current time: 252. RSS : 6076 MB, Vector Set Size : 244 MB, True Size: 5832 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445299434 blocks, totally 1696 GB
+IOPS: 17.1512k Bandwidth: 66.9971MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1351080, Deleted: 0 .
+[1] Current time: 255. RSS : 6077 MB, Vector Set Size : 244 MB, True Size: 5833 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445298575 blocks, totally 1696 GB
+IOPS: 16.9541k Bandwidth: 66.2269MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1354777, Deleted: 0 .
+[1] Current time: 258. RSS : 6077 MB, Vector Set Size : 244 MB, True Size: 5833 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445297747 blocks, totally 1696 GB
+IOPS: 16.7918k Bandwidth: 65.5928MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1358289, Deleted: 0 .
+[1] Sent 32.75%...
+[1] Current time: 261. RSS : 6077 MB, Vector Set Size : 244 MB, True Size: 5833 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445296939 blocks, totally 1696 GB
+IOPS: 16.8717k Bandwidth: 65.9053MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1361871, Deleted: 0 .
+[1] Current time: 264. RSS : 6078 MB, Vector Set Size : 244 MB, True Size: 5834 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445296145 blocks, totally 1696 GB
+IOPS: 16.5044k Bandwidth: 64.4705MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1365342, Deleted: 0 .
+[1] Current time: 267. RSS : 6078 MB, Vector Set Size : 244 MB, True Size: 5834 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445295331 blocks, totally 1696 GB
+IOPS: 16.5418k Bandwidth: 64.6163MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1368772, Deleted: 0 .
+[1] Current time: 270. RSS : 6078 MB, Vector Set Size : 244 MB, True Size: 5834 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445294510 blocks, totally 1696 GB
+IOPS: 16.6823k Bandwidth: 65.1651MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1372216, Deleted: 0 .
+[1] Current time: 273. RSS : 6079 MB, Vector Set Size : 244 MB, True Size: 5835 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445293733 blocks, totally 1696 GB
+IOPS: 16.5294k Bandwidth: 64.5681MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1375641, Deleted: 0 .
+[1] Sent 34.47%...
+[1] Current time: 276. RSS : 6079 MB, Vector Set Size : 244 MB, True Size: 5835 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445292942 blocks, totally 1696 GB
+IOPS: 16.4609k Bandwidth: 64.3004MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1379050, Deleted: 0 .
+[1] Current time: 279. RSS : 6079 MB, Vector Set Size : 244 MB, True Size: 5835 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445292104 blocks, totally 1696 GB
+IOPS: 16.5811k Bandwidth: 64.7699MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1382528, Deleted: 0 .
+[1] Current time: 282. RSS : 6080 MB, Vector Set Size : 244 MB, True Size: 5836 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445291328 blocks, totally 1696 GB
+IOPS: 16.6916k Bandwidth: 65.2014MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1386047, Deleted: 0 .
+[1] Current time: 285. RSS : 6080 MB, Vector Set Size : 244 MB, True Size: 5836 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445290566 blocks, totally 1696 GB
+IOPS: 16.4143k Bandwidth: 64.1182MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1389524, Deleted: 0 .
+[1] Current time: 288. RSS : 6080 MB, Vector Set Size : 244 MB, True Size: 5836 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445289767 blocks, totally 1696 GB
+IOPS: 16.6446k Bandwidth: 65.0179MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1393019, Deleted: 0 .
+[1] Sent 36.19%...
+[1] Current time: 291. RSS : 6082 MB, Vector Set Size : 244 MB, True Size: 5838 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445289007 blocks, totally 1696 GB
+IOPS: 16.4921k Bandwidth: 64.4223MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1396483, Deleted: 0 .
+[1] Current time: 294. RSS : 6082 MB, Vector Set Size : 244 MB, True Size: 5838 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445288257 blocks, totally 1696 GB
+IOPS: 16.6656k Bandwidth: 65.0998MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1399999, Deleted: 0 .
+[1] Current time: 297. RSS : 6082 MB, Vector Set Size : 244 MB, True Size: 5838 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445287452 blocks, totally 1696 GB
+IOPS: 16.6393k Bandwidth: 64.9972MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1403487, Deleted: 0 .
+[1] Current time: 300. RSS : 6082 MB, Vector Set Size : 244 MB, True Size: 5838 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445286660 blocks, totally 1696 GB
+IOPS: 16.4329k Bandwidth: 64.1912MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1406963, Deleted: 0 .
+[1] Sent 37.92%...
+[1] Current time: 303. RSS : 6082 MB, Vector Set Size : 244 MB, True Size: 5838 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445285906 blocks, totally 1696 GB
+IOPS: 16.5396k Bandwidth: 64.608MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1410534, Deleted: 0 .
+[1] Current time: 306. RSS : 6083 MB, Vector Set Size : 244 MB, True Size: 5839 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445285115 blocks, totally 1696 GB
+IOPS: 16.9231k Bandwidth: 66.106MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1414126, Deleted: 0 .
+[1] Current time: 309. RSS : 6083 MB, Vector Set Size : 244 MB, True Size: 5839 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445284313 blocks, totally 1696 GB
+IOPS: 16.615k Bandwidth: 64.9023MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1417609, Deleted: 0 .
+[1] Current time: 312. RSS : 6084 MB, Vector Set Size : 244 MB, True Size: 5840 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445283502 blocks, totally 1696 GB
+IOPS: 17.0204k Bandwidth: 66.4861MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1421187, Deleted: 0 .
+[1] Current time: 315. RSS : 6084 MB, Vector Set Size : 244 MB, True Size: 5840 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445282666 blocks, totally 1696 GB
+IOPS: 17.2377k Bandwidth: 67.3347MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1424824, Deleted: 0 .
+[1] Sent 39.64%...
+[1] Current time: 318. RSS : 6084 MB, Vector Set Size : 244 MB, True Size: 5840 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445281829 blocks, totally 1696 GB
+IOPS: 17.5552k Bandwidth: 68.5751MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1428580, Deleted: 0 .
+[1] Current time: 321. RSS : 6085 MB, Vector Set Size : 244 MB, True Size: 5841 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445280995 blocks, totally 1696 GB
+IOPS: 17.3256k Bandwidth: 67.678MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1432195, Deleted: 0 .
+[1] Current time: 324. RSS : 6085 MB, Vector Set Size : 244 MB, True Size: 5841 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445280188 blocks, totally 1696 GB
+IOPS: 16.977k Bandwidth: 66.3165MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1435835, Deleted: 0 .
+[1] Current time: 327. RSS : 6085 MB, Vector Set Size : 244 MB, True Size: 5841 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445279338 blocks, totally 1696 GB
+IOPS: 17.4496k Bandwidth: 68.1625MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1439433, Deleted: 0 .
+[1] Sent 41.37%...
+[1] Current time: 330. RSS : 6086 MB, Vector Set Size : 244 MB, True Size: 5842 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445278509 blocks, totally 1696 GB
+IOPS: 17.01k Bandwidth: 66.4452MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1442981, Deleted: 0 .
+[1] Current time: 333. RSS : 6086 MB, Vector Set Size : 244 MB, True Size: 5842 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445277700 blocks, totally 1696 GB
+IOPS: 17.1509k Bandwidth: 66.9955MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1446522, Deleted: 0 .
+[1] Current time: 336. RSS : 6086 MB, Vector Set Size : 244 MB, True Size: 5842 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445276852 blocks, totally 1696 GB
+IOPS: 17.2775k Bandwidth: 67.4904MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1450081, Deleted: 0 .
+[1] Current time: 339. RSS : 6087 MB, Vector Set Size : 244 MB, True Size: 5843 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445276028 blocks, totally 1696 GB
+IOPS: 16.9594k Bandwidth: 66.2478MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1453618, Deleted: 0 .
+[1] Current time: 342. RSS : 6087 MB, Vector Set Size : 244 MB, True Size: 5843 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445275193 blocks, totally 1696 GB
+IOPS: 17.0252k Bandwidth: 66.5049MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1457179, Deleted: 0 .
+[1] Sent 43.09%...
+[1] Current time: 345. RSS : 6087 MB, Vector Set Size : 244 MB, True Size: 5843 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445274345 blocks, totally 1696 GB
+IOPS: 17.1942k Bandwidth: 67.1647MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1460857, Deleted: 0 .
+[1] Current time: 348. RSS : 6088 MB, Vector Set Size : 244 MB, True Size: 5844 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445273533 blocks, totally 1696 GB
+IOPS: 17.5626k Bandwidth: 68.6038MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1464620, Deleted: 0 .
+[1] Current time: 351. RSS : 6088 MB, Vector Set Size : 244 MB, True Size: 5844 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445272761 blocks, totally 1696 GB
+IOPS: 17.0546k Bandwidth: 66.6194MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1468234, Deleted: 0 .
+[1] Current time: 354. RSS : 6088 MB, Vector Set Size : 244 MB, True Size: 5844 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445271980 blocks, totally 1696 GB
+IOPS: 16.474k Bandwidth: 64.3514MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1471704, Deleted: 0 .
+[1] Current time: 357. RSS : 6089 MB, Vector Set Size : 244 MB, True Size: 5845 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445271178 blocks, totally 1696 GB
+IOPS: 16.6016k Bandwidth: 64.8499MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1475116, Deleted: 0 .
+[1] Sent 44.81%...
+[1] Current time: 360. RSS : 6089 MB, Vector Set Size : 244 MB, True Size: 5845 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445270356 blocks, totally 1696 GB
+IOPS: 16.6383k Bandwidth: 64.9932MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1478614, Deleted: 0 .
+[1] Current time: 363. RSS : 6090 MB, Vector Set Size : 244 MB, True Size: 5846 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445269570 blocks, totally 1696 GB
+IOPS: 16.7956k Bandwidth: 65.6076MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1482186, Deleted: 0 .
+[1] Current time: 366. RSS : 6090 MB, Vector Set Size : 244 MB, True Size: 5846 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445268745 blocks, totally 1696 GB
+IOPS: 16.6892k Bandwidth: 65.1924MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1485727, Deleted: 0 .
+[1] Current time: 369. RSS : 6090 MB, Vector Set Size : 244 MB, True Size: 5846 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445267914 blocks, totally 1696 GB
+IOPS: 16.8859k Bandwidth: 65.9605MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1489330, Deleted: 0 .
+[1] Sent 46.54%...
+[1] Current time: 372. RSS : 6091 MB, Vector Set Size : 244 MB, True Size: 5847 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445267094 blocks, totally 1696 GB
+IOPS: 17.1029k Bandwidth: 66.8082MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1492854, Deleted: 0 .
+[1] Current time: 375. RSS : 6091 MB, Vector Set Size : 244 MB, True Size: 5847 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445266288 blocks, totally 1696 GB
+IOPS: 17.5402k Bandwidth: 68.5164MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1496501, Deleted: 0 .
+[1] Current time: 378. RSS : 6092 MB, Vector Set Size : 244 MB, True Size: 5848 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445265420 blocks, totally 1696 GB
+IOPS: 17.3429k Bandwidth: 67.7456MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1500146, Deleted: 0 .
+[1] Current time: 381. RSS : 6092 MB, Vector Set Size : 244 MB, True Size: 5848 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445264624 blocks, totally 1696 GB
+IOPS: 16.8667k Bandwidth: 65.8856MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1503805, Deleted: 0 .
+[1] Current time: 384. RSS : 6092 MB, Vector Set Size : 244 MB, True Size: 5848 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445263779 blocks, totally 1696 GB
+IOPS: 16.6566k Bandwidth: 65.0649MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1507231, Deleted: 0 .
+[1] Sent 48.26%...
+[1] Current time: 387. RSS : 6093 MB, Vector Set Size : 244 MB, True Size: 5849 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445262995 blocks, totally 1696 GB
+IOPS: 16.6423k Bandwidth: 65.0088MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1510687, Deleted: 0 .
+[1] Current time: 390. RSS : 6093 MB, Vector Set Size : 244 MB, True Size: 5849 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445262263 blocks, totally 1696 GB
+IOPS: 16.5855k Bandwidth: 64.7872MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1514230, Deleted: 0 .
+[1] Current time: 393. RSS : 6093 MB, Vector Set Size : 244 MB, True Size: 5849 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445261465 blocks, totally 1696 GB
+IOPS: 16.674k Bandwidth: 65.1329MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1517844, Deleted: 0 .
+[1] Current time: 396. RSS : 6094 MB, Vector Set Size : 244 MB, True Size: 5850 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445260642 blocks, totally 1696 GB
+IOPS: 17.15k Bandwidth: 66.9921MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1521464, Deleted: 0 .
+[1] Sent 49.98%...
+[1] Current time: 399. RSS : 6094 MB, Vector Set Size : 244 MB, True Size: 5850 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445259818 blocks, totally 1696 GB
+IOPS: 17.2795k Bandwidth: 67.4982MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1525110, Deleted: 0 .
+[1] Current time: 402. RSS : 6094 MB, Vector Set Size : 244 MB, True Size: 5850 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445259001 blocks, totally 1696 GB
+IOPS: 17.1339k Bandwidth: 66.9292MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1528698, Deleted: 0 .
+[1] Current time: 405. RSS : 6095 MB, Vector Set Size : 244 MB, True Size: 5851 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445258173 blocks, totally 1696 GB
+IOPS: 16.9496k Bandwidth: 66.2093MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1532290, Deleted: 0 .
+[1] Current time: 408. RSS : 6095 MB, Vector Set Size : 244 MB, True Size: 5851 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445257346 blocks, totally 1696 GB
+IOPS: 16.6713k Bandwidth: 65.1221MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1535712, Deleted: 0 .
+[1] Current time: 411. RSS : 6095 MB, Vector Set Size : 244 MB, True Size: 5851 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445256526 blocks, totally 1696 GB
+IOPS: 16.4808k Bandwidth: 64.3779MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1539210, Deleted: 0 .
+[1] Sent 51.71%...
+[1] Current time: 414. RSS : 6096 MB, Vector Set Size : 244 MB, True Size: 5852 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445255703 blocks, totally 1696 GB
+IOPS: 16.6046k Bandwidth: 64.8617MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1542672, Deleted: 0 .
+[1] Current time: 417. RSS : 6096 MB, Vector Set Size : 244 MB, True Size: 5852 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445254914 blocks, totally 1696 GB
+IOPS: 16.9312k Bandwidth: 66.1376MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1546325, Deleted: 0 .
+[1] Current time: 420. RSS : 6096 MB, Vector Set Size : 244 MB, True Size: 5852 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445254071 blocks, totally 1696 GB
+IOPS: 17.07k Bandwidth: 66.6796MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1549904, Deleted: 0 .
+[1] Current time: 423. RSS : 6097 MB, Vector Set Size : 244 MB, True Size: 5853 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445253303 blocks, totally 1696 GB
+IOPS: 17.4856k Bandwidth: 68.303MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1553566, Deleted: 0 .
+[1] Current time: 426. RSS : 6097 MB, Vector Set Size : 244 MB, True Size: 5853 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445252470 blocks, totally 1696 GB
+IOPS: 16.78k Bandwidth: 65.5468MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1557124, Deleted: 0 .
+[1] Sent 53.43%...
+[1] Current time: 429. RSS : 6098 MB, Vector Set Size : 244 MB, True Size: 5854 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445251656 blocks, totally 1696 GB
+IOPS: 17.0114k Bandwidth: 66.4506MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1560759, Deleted: 0 .
+[1] Current time: 432. RSS : 6098 MB, Vector Set Size : 244 MB, True Size: 5854 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445250855 blocks, totally 1696 GB
+IOPS: 16.9518k Bandwidth: 66.2181MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1564346, Deleted: 0 .
+[1] Current time: 435. RSS : 6098 MB, Vector Set Size : 244 MB, True Size: 5854 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445250030 blocks, totally 1696 GB
+IOPS: 16.9704k Bandwidth: 66.2906MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1567968, Deleted: 0 .
+[1] Current time: 438. RSS : 6099 MB, Vector Set Size : 244 MB, True Size: 5855 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445249215 blocks, totally 1696 GB
+IOPS: 17.1391k Bandwidth: 66.9496MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1571739, Deleted: 0 .
+[1] Sent 55.15%...
+[1] Current time: 441. RSS : 6099 MB, Vector Set Size : 244 MB, True Size: 5855 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445248400 blocks, totally 1696 GB
+IOPS: 17.093k Bandwidth: 66.7696MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1575372, Deleted: 0 .
+[1] Current time: 444. RSS : 6100 MB, Vector Set Size : 244 MB, True Size: 5856 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445247618 blocks, totally 1696 GB
+IOPS: 16.5357k Bandwidth: 64.5925MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1578906, Deleted: 0 .
+[1] Current time: 447. RSS : 6100 MB, Vector Set Size : 244 MB, True Size: 5856 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445246801 blocks, totally 1696 GB
+IOPS: 16.3463k Bandwidth: 63.8529MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1582289, Deleted: 0 .
+[1] Current time: 450. RSS : 6100 MB, Vector Set Size : 244 MB, True Size: 5856 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445245866 blocks, totally 1696 GB
+IOPS: 18.6088k Bandwidth: 72.6906MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1586379, Deleted: 0 .
+[1] Sent 56.88%...
+[1] Current time: 453. RSS : 6101 MB, Vector Set Size : 244 MB, True Size: 5857 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445244903 blocks, totally 1696 GB
+IOPS: 19.2663k Bandwidth: 75.2591MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1590588, Deleted: 0 .
+[1] Current time: 456. RSS : 6101 MB, Vector Set Size : 244 MB, True Size: 5857 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445244134 blocks, totally 1696 GB
+IOPS: 16.4091k Bandwidth: 64.0982MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1594016, Deleted: 0 .
+[1] Current time: 459. RSS : 6101 MB, Vector Set Size : 244 MB, True Size: 5857 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445243364 blocks, totally 1696 GB
+IOPS: 16.2836k Bandwidth: 63.6078MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1597463, Deleted: 0 .
+[1] Current time: 462. RSS : 6102 MB, Vector Set Size : 244 MB, True Size: 5858 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445242554 blocks, totally 1696 GB
+IOPS: 16.8988k Bandwidth: 66.0108MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1601117, Deleted: 0 .
+[1] Current time: 465. RSS : 6102 MB, Vector Set Size : 244 MB, True Size: 5858 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445241776 blocks, totally 1696 GB
+IOPS: 16.4869k Bandwidth: 64.4018MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1604608, Deleted: 0 .
+[1] Sent 58.60%...
+[1] Current time: 468. RSS : 6102 MB, Vector Set Size : 244 MB, True Size: 5858 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445240966 blocks, totally 1696 GB
+IOPS: 16.5951k Bandwidth: 64.8247MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1608079, Deleted: 0 .
+[1] Current time: 471. RSS : 6103 MB, Vector Set Size : 244 MB, True Size: 5859 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445240160 blocks, totally 1696 GB
+IOPS: 16.6957k Bandwidth: 65.2175MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1611537, Deleted: 0 .
+[1] Current time: 474. RSS : 6103 MB, Vector Set Size : 244 MB, True Size: 5859 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445239320 blocks, totally 1696 GB
+IOPS: 16.8059k Bandwidth: 65.6481MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1615233, Deleted: 0 .
+[1] Current time: 477. RSS : 6103 MB, Vector Set Size : 244 MB, True Size: 5859 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445238506 blocks, totally 1696 GB
+IOPS: 16.9376k Bandwidth: 66.1625MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1619048, Deleted: 0 .
+[1] Current time: 480. RSS : 6104 MB, Vector Set Size : 244 MB, True Size: 5860 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445237724 blocks, totally 1696 GB
+IOPS: 16.7545k Bandwidth: 65.4473MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1622607, Deleted: 0 .
+[1] Sent 60.32%...
+[1] Current time: 483. RSS : 6104 MB, Vector Set Size : 244 MB, True Size: 5860 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445236933 blocks, totally 1696 GB
+IOPS: 16.8085k Bandwidth: 65.6581MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1626132, Deleted: 0 .
+[1] Current time: 486. RSS : 6105 MB, Vector Set Size : 244 MB, True Size: 5861 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445236134 blocks, totally 1696 GB
+IOPS: 16.8806k Bandwidth: 65.9398MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1629688, Deleted: 0 .
+[1] Current time: 489. RSS : 6105 MB, Vector Set Size : 244 MB, True Size: 5861 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445235315 blocks, totally 1696 GB
+IOPS: 17.1998k Bandwidth: 67.1867MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1633361, Deleted: 0 .
+[1] Current time: 492. RSS : 6105 MB, Vector Set Size : 244 MB, True Size: 5861 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445234467 blocks, totally 1696 GB
+IOPS: 16.8209k Bandwidth: 65.7067MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1636856, Deleted: 0 .
+[1] Sent 62.05%...
+[1] Current time: 495. RSS : 6106 MB, Vector Set Size : 244 MB, True Size: 5862 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445233687 blocks, totally 1696 GB
+IOPS: 16.7588k Bandwidth: 65.464MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1640486, Deleted: 0 .
+[1] Current time: 498. RSS : 6106 MB, Vector Set Size : 244 MB, True Size: 5862 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445232834 blocks, totally 1696 GB
+IOPS: 16.9858k Bandwidth: 66.3508MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1644058, Deleted: 0 .
+[1] Current time: 501. RSS : 6106 MB, Vector Set Size : 244 MB, True Size: 5862 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445231986 blocks, totally 1696 GB
+IOPS: 17.1456k Bandwidth: 66.9749MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1647668, Deleted: 0 .
+[1] Current time: 504. RSS : 6107 MB, Vector Set Size : 244 MB, True Size: 5863 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445231193 blocks, totally 1696 GB
+IOPS: 16.9779k Bandwidth: 66.32MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1651281, Deleted: 0 .
+[1] Current time: 507. RSS : 6107 MB, Vector Set Size : 244 MB, True Size: 5863 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445230359 blocks, totally 1696 GB
+IOPS: 17.0172k Bandwidth: 66.4736MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1654887, Deleted: 0 .
+[1] Sent 63.77%...
+[1] Current time: 510. RSS : 6107 MB, Vector Set Size : 244 MB, True Size: 5863 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445229561 blocks, totally 1696 GB
+IOPS: 17.0346k Bandwidth: 66.5414MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1658421, Deleted: 0 .
+[1] Current time: 513. RSS : 6108 MB, Vector Set Size : 244 MB, True Size: 5864 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445228816 blocks, totally 1696 GB
+IOPS: 17.1044k Bandwidth: 66.8142MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1662061, Deleted: 0 .
+[1] Current time: 516. RSS : 6108 MB, Vector Set Size : 244 MB, True Size: 5864 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445228008 blocks, totally 1696 GB
+IOPS: 16.6798k Bandwidth: 65.1555MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1665634, Deleted: 0 .
+[1] Current time: 519. RSS : 6109 MB, Vector Set Size : 244 MB, True Size: 5865 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445227229 blocks, totally 1696 GB
+IOPS: 16.4733k Bandwidth: 64.3488MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1669146, Deleted: 0 .
+[1] Sent 65.50%...
+[1] Current time: 522. RSS : 6109 MB, Vector Set Size : 244 MB, True Size: 5865 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445226457 blocks, totally 1696 GB
+IOPS: 16.9823k Bandwidth: 66.337MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1672775, Deleted: 0 .
+[1] Current time: 525. RSS : 6109 MB, Vector Set Size : 244 MB, True Size: 5865 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445225642 blocks, totally 1696 GB
+IOPS: 17.3532k Bandwidth: 67.786MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1676430, Deleted: 0 .
+[1] Current time: 528. RSS : 6110 MB, Vector Set Size : 244 MB, True Size: 5866 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445224791 blocks, totally 1696 GB
+IOPS: 17.1212k Bandwidth: 66.8799MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1680028, Deleted: 0 .
+[1] Current time: 531. RSS : 6110 MB, Vector Set Size : 244 MB, True Size: 5866 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445223977 blocks, totally 1696 GB
+IOPS: 17.0622k Bandwidth: 66.6494MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1683641, Deleted: 0 .
+[1] Current time: 534. RSS : 6111 MB, Vector Set Size : 244 MB, True Size: 5867 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445223174 blocks, totally 1696 GB
+IOPS: 16.9685k Bandwidth: 66.2833MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1687215, Deleted: 0 .
+[1] Sent 67.22%...
+[1] Current time: 537. RSS : 6111 MB, Vector Set Size : 244 MB, True Size: 5867 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445222341 blocks, totally 1696 GB
+IOPS: 17.4206k Bandwidth: 68.0494MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1690875, Deleted: 0 .
+[1] Current time: 540. RSS : 6111 MB, Vector Set Size : 244 MB, True Size: 5867 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445221490 blocks, totally 1696 GB
+IOPS: 17.6273k Bandwidth: 68.8565MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1694555, Deleted: 0 .
+[1] Current time: 543. RSS : 6112 MB, Vector Set Size : 244 MB, True Size: 5868 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445220679 blocks, totally 1696 GB
+IOPS: 16.3792k Bandwidth: 63.9811MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1698167, Deleted: 0 .
+[1] Current time: 546. RSS : 6112 MB, Vector Set Size : 244 MB, True Size: 5868 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445219913 blocks, totally 1696 GB
+IOPS: 16.0939k Bandwidth: 62.8669MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1701583, Deleted: 0 .
+[1] Sent 68.94%...
+[1] Current time: 549. RSS : 6113 MB, Vector Set Size : 244 MB, True Size: 5869 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445219005 blocks, totally 1696 GB
+IOPS: 18.8817k Bandwidth: 73.7568MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1705689, Deleted: 0 .
+[1] Current time: 552. RSS : 6113 MB, Vector Set Size : 244 MB, True Size: 5869 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445218136 blocks, totally 1696 GB
+IOPS: 18.4605k Bandwidth: 72.1113MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1710068, Deleted: 0 .
+[1] Current time: 555. RSS : 6113 MB, Vector Set Size : 244 MB, True Size: 5869 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445217281 blocks, totally 1696 GB
+IOPS: 17.8859k Bandwidth: 69.8668MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1713827, Deleted: 0 .
+[1] Current time: 558. RSS : 6114 MB, Vector Set Size : 244 MB, True Size: 5870 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445216467 blocks, totally 1696 GB
+IOPS: 17.5749k Bandwidth: 68.6518MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1717587, Deleted: 0 .
+[1] Sent 70.67%...
+[1] Current time: 561. RSS : 6114 MB, Vector Set Size : 244 MB, True Size: 5870 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445215690 blocks, totally 1696 GB
+IOPS: 17.3519k Bandwidth: 67.781MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1721260, Deleted: 0 .
+[1] Current time: 564. RSS : 6115 MB, Vector Set Size : 244 MB, True Size: 5871 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445214835 blocks, totally 1696 GB
+IOPS: 17.3305k Bandwidth: 67.6971MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1724939, Deleted: 0 .
+[1] Current time: 567. RSS : 6115 MB, Vector Set Size : 244 MB, True Size: 5871 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445213987 blocks, totally 1696 GB
+IOPS: 17.7266k Bandwidth: 69.2445MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1728716, Deleted: 0 .
+[1] Current time: 570. RSS : 6115 MB, Vector Set Size : 244 MB, True Size: 5871 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445213150 blocks, totally 1696 GB
+IOPS: 18.1254k Bandwidth: 70.8024MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1732461, Deleted: 0 .
+[1] Current time: 573. RSS : 6116 MB, Vector Set Size : 244 MB, True Size: 5872 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445212343 blocks, totally 1696 GB
+IOPS: 17.6279k Bandwidth: 68.8588MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1736061, Deleted: 0 .
+[1] Sent 72.39%...
+[1] Current time: 576. RSS : 6116 MB, Vector Set Size : 244 MB, True Size: 5872 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445211492 blocks, totally 1696 GB
+IOPS: 17.7206k Bandwidth: 69.2212MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1739721, Deleted: 0 .
+[1] Current time: 579. RSS : 6116 MB, Vector Set Size : 244 MB, True Size: 5872 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445210698 blocks, totally 1696 GB
+IOPS: 17.7634k Bandwidth: 69.3883MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1743399, Deleted: 0 .
+[1] Current time: 582. RSS : 6117 MB, Vector Set Size : 244 MB, True Size: 5873 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445209887 blocks, totally 1696 GB
+IOPS: 17.3691k Bandwidth: 67.8481MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1747081, Deleted: 0 .
+[1] Current time: 585. RSS : 6117 MB, Vector Set Size : 244 MB, True Size: 5873 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445209063 blocks, totally 1696 GB
+IOPS: 17.5269k Bandwidth: 68.4645MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1750724, Deleted: 0 .
+[1] Sent 74.11%...
+[1] Current time: 588. RSS : 6118 MB, Vector Set Size : 244 MB, True Size: 5874 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445208110 blocks, totally 1696 GB
+IOPS: 18.1139k Bandwidth: 70.7573MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1754662, Deleted: 0 .
+[1] Current time: 591. RSS : 6118 MB, Vector Set Size : 244 MB, True Size: 5874 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445207309 blocks, totally 1696 GB
+IOPS: 17.1119k Bandwidth: 66.8434MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1758327, Deleted: 0 .
+[1] Current time: 594. RSS : 6118 MB, Vector Set Size : 244 MB, True Size: 5874 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445206448 blocks, totally 1696 GB
+IOPS: 17.1979k Bandwidth: 67.1793MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1761921, Deleted: 0 .
+[1] Current time: 597. RSS : 6119 MB, Vector Set Size : 244 MB, True Size: 5875 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445205591 blocks, totally 1696 GB
+IOPS: 17.1677k Bandwidth: 67.0614MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1765534, Deleted: 0 .
+[1] Current time: 600. RSS : 6119 MB, Vector Set Size : 244 MB, True Size: 5875 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445204707 blocks, totally 1696 GB
+IOPS: 17.2263k Bandwidth: 67.2901MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1769081, Deleted: 0 .
+[1] Sent 75.84%...
+[1] Current time: 603. RSS : 6120 MB, Vector Set Size : 244 MB, True Size: 5876 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445203900 blocks, totally 1696 GB
+IOPS: 16.9153k Bandwidth: 66.0754MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1772653, Deleted: 0 .
+[1] Current time: 606. RSS : 6120 MB, Vector Set Size : 244 MB, True Size: 5876 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445203077 blocks, totally 1696 GB
+IOPS: 17.4619k Bandwidth: 68.2106MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1776299, Deleted: 0 .
+[1] Current time: 609. RSS : 6120 MB, Vector Set Size : 244 MB, True Size: 5876 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445202247 blocks, totally 1696 GB
+IOPS: 17.4063k Bandwidth: 67.9933MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1779942, Deleted: 0 .
+[1] Current time: 612. RSS : 6121 MB, Vector Set Size : 244 MB, True Size: 5877 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445201423 blocks, totally 1696 GB
+IOPS: 17.2995k Bandwidth: 67.5764MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1783552, Deleted: 0 .
+[1] Sent 77.56%...
+[1] Current time: 615. RSS : 6121 MB, Vector Set Size : 244 MB, True Size: 5877 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445200618 blocks, totally 1696 GB
+IOPS: 16.9926k Bandwidth: 66.3772MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1787100, Deleted: 0 .
+[1] Current time: 618. RSS : 6121 MB, Vector Set Size : 244 MB, True Size: 5877 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445199800 blocks, totally 1696 GB
+IOPS: 17.0148k Bandwidth: 66.4639MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1790693, Deleted: 0 .
+[1] Current time: 621. RSS : 6122 MB, Vector Set Size : 244 MB, True Size: 5878 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445198951 blocks, totally 1696 GB
+IOPS: 16.8166k Bandwidth: 65.6899MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1794296, Deleted: 0 .
+[1] Current time: 624. RSS : 6122 MB, Vector Set Size : 244 MB, True Size: 5878 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445198213 blocks, totally 1696 GB
+IOPS: 16.5156k Bandwidth: 64.5141MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1797733, Deleted: 0 .
+[1] Current time: 627. RSS : 6122 MB, Vector Set Size : 244 MB, True Size: 5878 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445197392 blocks, totally 1696 GB
+IOPS: 16.6019k Bandwidth: 64.8512MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1801248, Deleted: 0 .
+[1] Sent 79.28%...
+[1] Current time: 630. RSS : 6123 MB, Vector Set Size : 244 MB, True Size: 5879 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445196607 blocks, totally 1696 GB
+IOPS: 16.8326k Bandwidth: 65.7523MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1804789, Deleted: 0 .
+[1] Current time: 633. RSS : 6123 MB, Vector Set Size : 244 MB, True Size: 5879 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445195787 blocks, totally 1696 GB
+IOPS: 16.7796k Bandwidth: 65.5452MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1808343, Deleted: 0 .
+[1] Current time: 636. RSS : 6123 MB, Vector Set Size : 244 MB, True Size: 5879 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445194962 blocks, totally 1696 GB
+IOPS: 17.1026k Bandwidth: 66.807MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1811935, Deleted: 0 .
+[1] Current time: 639. RSS : 6124 MB, Vector Set Size : 244 MB, True Size: 5880 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445194101 blocks, totally 1696 GB
+IOPS: 17.0846k Bandwidth: 66.7369MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1815662, Deleted: 0 .
+[1] Current time: 642. RSS : 6124 MB, Vector Set Size : 244 MB, True Size: 5880 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445193263 blocks, totally 1696 GB
+IOPS: 16.7349k Bandwidth: 65.3708MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1819204, Deleted: 0 .
+[1] Sent 81.01%...
+[1] Current time: 645. RSS : 6125 MB, Vector Set Size : 244 MB, True Size: 5881 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445192426 blocks, totally 1696 GB
+IOPS: 16.7309k Bandwidth: 65.3551MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1822841, Deleted: 0 .
+[1] Current time: 648. RSS : 6125 MB, Vector Set Size : 244 MB, True Size: 5881 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445191617 blocks, totally 1696 GB
+IOPS: 16.8769k Bandwidth: 65.9255MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1826507, Deleted: 0 .
+[1] Current time: 651. RSS : 6125 MB, Vector Set Size : 244 MB, True Size: 5881 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445190823 blocks, totally 1696 GB
+IOPS: 16.8515k Bandwidth: 65.8262MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1830094, Deleted: 0 .
+[1] Current time: 654. RSS : 6126 MB, Vector Set Size : 244 MB, True Size: 5882 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445190068 blocks, totally 1696 GB
+IOPS: 16.6294k Bandwidth: 64.9587MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1833653, Deleted: 0 .
+[1] Sent 82.73%...
+[1] Current time: 657. RSS : 6126 MB, Vector Set Size : 244 MB, True Size: 5882 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445189276 blocks, totally 1696 GB
+IOPS: 16.4728k Bandwidth: 64.347MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1837106, Deleted: 0 .
+[1] Current time: 660. RSS : 6127 MB, Vector Set Size : 244 MB, True Size: 5883 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445188475 blocks, totally 1696 GB
+IOPS: 16.7446k Bandwidth: 65.4086MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1840586, Deleted: 0 .
+[1] Current time: 663. RSS : 6127 MB, Vector Set Size : 244 MB, True Size: 5883 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445187681 blocks, totally 1696 GB
+IOPS: 16.6476k Bandwidth: 65.0296MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1844030, Deleted: 0 .
+[1] Current time: 666. RSS : 6127 MB, Vector Set Size : 244 MB, True Size: 5883 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445186925 blocks, totally 1696 GB
+IOPS: 16.6283k Bandwidth: 64.9543MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1847476, Deleted: 0 .
+[1] Current time: 669. RSS : 6128 MB, Vector Set Size : 244 MB, True Size: 5884 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445186145 blocks, totally 1696 GB
+IOPS: 16.5543k Bandwidth: 64.665MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1850938, Deleted: 0 .
+[1] Sent 84.45%...
+[1] Current time: 672. RSS : 6128 MB, Vector Set Size : 244 MB, True Size: 5884 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445185353 blocks, totally 1696 GB
+IOPS: 16.6356k Bandwidth: 64.9829MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1854425, Deleted: 0 .
+[1] Current time: 675. RSS : 6128 MB, Vector Set Size : 244 MB, True Size: 5884 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445184534 blocks, totally 1696 GB
+IOPS: 16.6879k Bandwidth: 65.1872MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1857975, Deleted: 0 .
+[1] Current time: 678. RSS : 6129 MB, Vector Set Size : 244 MB, True Size: 5885 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445183749 blocks, totally 1696 GB
+IOPS: 16.9152k Bandwidth: 66.0752MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1861507, Deleted: 0 .
+[1] Current time: 681. RSS : 6129 MB, Vector Set Size : 244 MB, True Size: 5885 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445182945 blocks, totally 1696 GB
+IOPS: 17.0516k Bandwidth: 66.608MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1865119, Deleted: 0 .
+[1] Sent 86.18%...
+[1] Current time: 684. RSS : 6129 MB, Vector Set Size : 244 MB, True Size: 5885 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445182102 blocks, totally 1696 GB
+IOPS: 16.8939k Bandwidth: 65.992MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1868672, Deleted: 0 .
+[1] Current time: 687. RSS : 6130 MB, Vector Set Size : 244 MB, True Size: 5886 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445181303 blocks, totally 1696 GB
+IOPS: 16.5959k Bandwidth: 64.8276MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1872184, Deleted: 0 .
+[1] Current time: 690. RSS : 6130 MB, Vector Set Size : 244 MB, True Size: 5886 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445180537 blocks, totally 1696 GB
+IOPS: 16.4543k Bandwidth: 64.2746MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1875583, Deleted: 0 .
+[1] Current time: 693. RSS : 6131 MB, Vector Set Size : 244 MB, True Size: 5887 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445179801 blocks, totally 1696 GB
+IOPS: 16.4276k Bandwidth: 64.1705MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1879129, Deleted: 0 .
+[1] Current time: 696. RSS : 6131 MB, Vector Set Size : 244 MB, True Size: 5887 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445178977 blocks, totally 1696 GB
+IOPS: 17.2136k Bandwidth: 67.2405MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1882822, Deleted: 0 .
+[1] Sent 87.90%...
+[1] Current time: 699. RSS : 6131 MB, Vector Set Size : 244 MB, True Size: 5887 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445178143 blocks, totally 1696 GB
+IOPS: 17.3689k Bandwidth: 67.8473MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1886465, Deleted: 0 .
+[1] Current time: 702. RSS : 6132 MB, Vector Set Size : 244 MB, True Size: 5888 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445177323 blocks, totally 1696 GB
+IOPS: 17.1561k Bandwidth: 67.0161MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1890152, Deleted: 0 .
+[1] Current time: 705. RSS : 6132 MB, Vector Set Size : 244 MB, True Size: 5888 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445176516 blocks, totally 1696 GB
+IOPS: 17.1532k Bandwidth: 67.0046MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1893809, Deleted: 0 .
+[1] Current time: 708. RSS : 6132 MB, Vector Set Size : 244 MB, True Size: 5888 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445175667 blocks, totally 1696 GB
+IOPS: 16.8674k Bandwidth: 65.8883MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1897406, Deleted: 0 .
+[1] Current time: 711. RSS : 6133 MB, Vector Set Size : 244 MB, True Size: 5889 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445174921 blocks, totally 1696 GB
+IOPS: 16.931k Bandwidth: 66.1366MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1900928, Deleted: 0 .
+[1] Sent 89.63%...
+[1] Current time: 714. RSS : 6133 MB, Vector Set Size : 244 MB, True Size: 5889 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445174144 blocks, totally 1696 GB
+IOPS: 16.6092k Bandwidth: 64.8797MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1904395, Deleted: 0 .
+[1] Current time: 717. RSS : 6133 MB, Vector Set Size : 244 MB, True Size: 5889 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445173366 blocks, totally 1696 GB
+IOPS: 16.7591k Bandwidth: 65.4652MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1907927, Deleted: 0 .
+[1] Current time: 720. RSS : 6134 MB, Vector Set Size : 244 MB, True Size: 5890 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445172524 blocks, totally 1696 GB
+IOPS: 16.6588k Bandwidth: 65.0734MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1911453, Deleted: 0 .
+[1] Current time: 723. RSS : 6134 MB, Vector Set Size : 244 MB, True Size: 5890 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445171699 blocks, totally 1696 GB
+IOPS: 16.9566k Bandwidth: 66.2366MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1915010, Deleted: 0 .
+[1] Sent 91.35%...
+[1] Current time: 726. RSS : 6134 MB, Vector Set Size : 244 MB, True Size: 5890 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445170842 blocks, totally 1696 GB
+IOPS: 17.2218k Bandwidth: 67.2727MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1918597, Deleted: 0 .
+[1] Current time: 729. RSS : 6135 MB, Vector Set Size : 244 MB, True Size: 5891 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445170069 blocks, totally 1696 GB
+IOPS: 17.3333k Bandwidth: 67.7081MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1922226, Deleted: 0 .
+[1] Current time: 732. RSS : 6135 MB, Vector Set Size : 244 MB, True Size: 5891 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445169206 blocks, totally 1696 GB
+IOPS: 17.3667k Bandwidth: 67.8388MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1925863, Deleted: 0 .
+[1] Current time: 735. RSS : 6136 MB, Vector Set Size : 244 MB, True Size: 5892 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445168343 blocks, totally 1696 GB
+IOPS: 17.2546k Bandwidth: 67.4009MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1929496, Deleted: 0 .
+[1] Current time: 738. RSS : 6136 MB, Vector Set Size : 244 MB, True Size: 5892 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445167480 blocks, totally 1696 GB
+IOPS: 17.6562k Bandwidth: 68.9696MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1933287, Deleted: 0 .
+[1] Sent 93.07%...
+[1] Current time: 741. RSS : 6137 MB, Vector Set Size : 244 MB, True Size: 5893 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445166633 blocks, totally 1696 GB
+IOPS: 17.6134k Bandwidth: 68.8023MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1937014, Deleted: 0 .
+[1] Current time: 744. RSS : 6137 MB, Vector Set Size : 244 MB, True Size: 5893 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445165737 blocks, totally 1696 GB
+IOPS: 17.7375k Bandwidth: 69.2873MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1940750, Deleted: 0 .
+[1] Current time: 747. RSS : 6137 MB, Vector Set Size : 244 MB, True Size: 5893 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445164910 blocks, totally 1696 GB
+IOPS: 17.3299k Bandwidth: 67.6949MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1944391, Deleted: 0 .
+[1] Current time: 750. RSS : 6138 MB, Vector Set Size : 244 MB, True Size: 5894 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445164098 blocks, totally 1696 GB
+IOPS: 16.7814k Bandwidth: 65.5524MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1947895, Deleted: 0 .
+[1] Sent 94.80%...
+[1] Current time: 753. RSS : 6140 MB, Vector Set Size : 244 MB, True Size: 5896 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445163292 blocks, totally 1696 GB
+IOPS: 16.7917k Bandwidth: 65.5926MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1951451, Deleted: 0 .
+[1] Current time: 756. RSS : 6140 MB, Vector Set Size : 244 MB, True Size: 5896 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445162441 blocks, totally 1696 GB
+IOPS: 17.2976k Bandwidth: 67.5687MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1955081, Deleted: 0 .
+[1] Current time: 759. RSS : 6141 MB, Vector Set Size : 244 MB, True Size: 5897 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445161608 blocks, totally 1696 GB
+IOPS: 17.2766k Bandwidth: 67.4867MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1958687, Deleted: 0 .
+[1] Current time: 762. RSS : 6142 MB, Vector Set Size : 244 MB, True Size: 5898 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445160786 blocks, totally 1696 GB
+IOPS: 17.235k Bandwidth: 67.3241MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1962182, Deleted: 0 .
+[1] Current time: 765. RSS : 6143 MB, Vector Set Size : 244 MB, True Size: 5899 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445159931 blocks, totally 1696 GB
+IOPS: 16.9433k Bandwidth: 66.1846MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1965697, Deleted: 0 .
+[1] Sent 96.52%...
+[1] Current time: 768. RSS : 6143 MB, Vector Set Size : 244 MB, True Size: 5899 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445159130 blocks, totally 1696 GB
+IOPS: 17.1445k Bandwidth: 66.9706MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1969318, Deleted: 0 .
+[1] Current time: 771. RSS : 6143 MB, Vector Set Size : 244 MB, True Size: 5899 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445158283 blocks, totally 1696 GB
+IOPS: 16.9139k Bandwidth: 66.0701MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1972893, Deleted: 0 .
+[1] Current time: 774. RSS : 6144 MB, Vector Set Size : 244 MB, True Size: 5900 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445157511 blocks, totally 1696 GB
+IOPS: 16.7865k Bandwidth: 65.5721MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1976405, Deleted: 0 .
+[1] Current time: 777. RSS : 6144 MB, Vector Set Size : 244 MB, True Size: 5900 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445156736 blocks, totally 1696 GB
+IOPS: 16.5099k Bandwidth: 64.4919MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1979863, Deleted: 0 .
+[1] Current time: 780. RSS : 6145 MB, Vector Set Size : 244 MB, True Size: 5901 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445155928 blocks, totally 1696 GB
+IOPS: 16.4043k Bandwidth: 64.0791MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1983262, Deleted: 0 .
+[1] Sent 98.24%...
+[1] Current time: 783. RSS : 6145 MB, Vector Set Size : 244 MB, True Size: 5901 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445155171 blocks, totally 1696 GB
+IOPS: 16.7184k Bandwidth: 65.3064MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1986822, Deleted: 0 .
+[1] Current time: 786. RSS : 6146 MB, Vector Set Size : 244 MB, True Size: 5902 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445154355 blocks, totally 1696 GB
+IOPS: 16.8422k Bandwidth: 65.7898MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1990459, Deleted: 0 .
+[1] Current time: 789. RSS : 6146 MB, Vector Set Size : 244 MB, True Size: 5902 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445153517 blocks, totally 1696 GB
+IOPS: 17.6874k Bandwidth: 69.0915MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1994062, Deleted: 0 .
+[1] Current time: 792. RSS : 6147 MB, Vector Set Size : 244 MB, True Size: 5903 MB
+[1] After -1 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] Remain 445152695 blocks, totally 1696 GB
+IOPS: 17.3049k Bandwidth: 67.5972MB/s
+[1] remain splitJobs: 0, reassignJobs: 0, running split: 0, running reassign: 0
+[1] Current Vector Num: 1997682, Deleted: 0 .
+[1] Sent 99.97%...
+[1] Finish sending in 793.816 seconds, sending throughput is 1197.49 , insertion count 950589.
+[1] During Update
+[1] Finish syncing in 793.816 seconds, actuall throughput is 1197.49, insertion count 950589.
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 834.455	867.000	967.000	1022.000	1199.000	1542.000	10456.000
+[1] Total Vector num 2000000 
+[1] After 950589 insertion, head vectors split 0 times, head missing 0 times, same head 0 times, reassign 0 times, reassign scan 0 times, garbage collection 0 times, merge 0 times
+[1] AppendTaskNum: 6649110, TotalCost: 501883335.000 us, PerCost: 75.481 us
+[1] AppendTaskNum: 6649110, AppendIO TotalCost: 499612371.000 us, PerCost: 75.140 us
+[1] SplitNum: 0, TotalCost: 0.000 ms, PerCost: -nan ms
+[1] SplitNum: 0, Read TotalCost: 0.000 us, PerCost: -nan us
+[1] SplitNum: 0, Clustering TotalCost: 0.000 us, PerCost: -nan us
+[1] SplitNum: 0, UpdateHead TotalCost: 0.000 ms, PerCost: -nan ms
+[1] SplitNum: 0, Write TotalCost: 0.000 us, PerCost: -nan us
+[1] SplitNum: 0, ReassignScan TotalCost: 0.000 ms, PerCost: -nan ms
+[1] SplitNum: 0, ReassignScanIO TotalCost: 0.000 us, PerCost: -nan us
+[1] GCNum: 0, TotalCost: 0.000 us, PerCost: -nan us
+[1] ReassignNum: 0, TotalCost: 0.000 us, PerCost: -nan us
+[1] ReassignNum: 0, Select TotalCost: 0.000 us, PerCost: -nan us
+[1] ReassignNum: 0, ReassignAppend TotalCost: 0.000 us, PerCost: -nan us
+[1] Current time: 794. RSS : 6137 MB, Vector Set Size : 244 MB, True Size: 5893 MB
+[1] Searching: numThread: 4, numQueries: 10000, searchTimes: 1.
+[1] Current time: 794, Searching Times: 1, AvgQPS: 4387.89.
+[1] 
+Ex Elements Count:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 2180.521	1619.000	4634.000	5851.000	9022.000	14171.000	20051.000
+[1] 
+Head Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.292	0.287	0.336	0.355	0.396	0.453	1.936
+[1] 
+Setup Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.007	0.007	0.007	0.007	0.007	0.014	0.029
+[1] 
+Comp Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.065	0.035	0.176	0.204	0.277	0.434	0.750
+[1] 
+SPDK Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.513	0.411	0.956	1.210	1.814	3.014	4.730
+[1] 
+Ex Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.617	0.482	1.160	1.439	2.111	3.455	5.528
+[1] 
+Total Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.909	0.778	1.455	1.733	2.421	3.775	5.837
+[1] 
+Total Disk Page Access Distribution(KB):
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 300.439	 223	 634	 809	1239	2055	2906
+[1] 
+Total Disk IO Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 83.212	  64	 166	 210	 317	 523	 734
+[1] 
+[1] Start loading TruthFile...: /home/sosp/data/sift_data/bigann2m_update_clustering_origin_truth0
+[4] K: 10, TruthResultNum: -1
+[4] Truth number is larger than query number(10000)!
+[1] Start Calculating Recall
+[1] stdrecall: 0.143368, maxrecall: 1.00, minrecall: 0.00
+[1] 
+Recall Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Min
+[1] 0.875	0.900	0.700	0.600	0.400	0.200	0.000
+[1] Recall10@10: 0.874754
+[1] Searching: numThread: 4, numQueries: 10000, searchTimes: 1.
+[1] Current time: 796, Searching Times: 1, AvgQPS: 2693.24.
+[1] 
+Ex Elements Count:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 4029.205	3089.000	8438.000	10604.000	15526.000	24415.000	29698.000
+[1] 
+Head Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.322	0.317	0.367	0.392	0.449	0.504	1.923
+[1] 
+Setup Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.007	0.007	0.007	0.007	0.007	0.014	0.058
+[1] 
+Comp Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.130	0.124	0.267	0.331	0.484	0.850	1.071
+[1] 
+SPDK Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.978	0.792	1.841	2.305	3.332	5.691	6.808
+[1] 
+Ex Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 1.160	0.972	2.156	2.695	3.863	6.502	7.941
+[1] 
+Total Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 1.482	1.297	2.484	3.025	4.191	6.859	8.263
+[1] 
+Total Disk Page Access Distribution(KB):
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 576.131	 441	1199	1503	2222	3713	4547
+[1] 
+Total Disk IO Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 160.105	 126	 316	 392	 570	 946	1154
+[1] 
+[1] Start loading TruthFile...: /home/sosp/data/sift_data/bigann2m_update_clustering_origin_truth0
+[4] K: 10, TruthResultNum: 100
+[4] Truth number is larger than query number(10000)!
+[1] Start Calculating Recall
+[1] stdrecall: 0.090141, maxrecall: 1.00, minrecall: 0.10
+[1] 
+Recall Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Min
+[1] 0.948	1.000	0.800	0.800	0.600	0.300	0.100
+[1] Recall10@10: 0.948332
+[1] Searching: numThread: 4, numQueries: 10000, searchTimes: 1.
+[1] Current time: 800, Searching Times: 1, AvgQPS: 1965.02.
+[1] 
+Ex Elements Count:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 5725.800	4452.000	11901.000	14901.000	21041.000	32803.000	40574.000
+[1] 
+Head Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.339	0.336	0.385	0.406	0.452	0.504	1.980
+[1] 
+Setup Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.007	0.007	0.007	0.007	0.007	0.014	0.016
+[1] 
+Comp Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.197	0.164	0.393	0.496	0.712	1.298	1.845
+[1] 
+SPDK Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 1.433	1.168	2.703	3.363	4.765	7.678	10.026
+[1] 
+Ex Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 1.693	1.384	3.163	3.918	5.532	8.922	11.954
+[1] 
+Total Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 2.032	1.727	3.520	4.272	5.882	9.285	12.328
+[1] 
+Total Disk Page Access Distribution(KB):
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 841.087	 652	1736	2169	3092	5013	6175
+[1] 
+Total Disk IO Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 234.286	 188	 458	 567	 797	1279	1568
+[1] 
+[1] Start loading TruthFile...: /home/sosp/data/sift_data/bigann2m_update_clustering_origin_truth0
+[4] K: 10, TruthResultNum: 100
+[4] Truth number is larger than query number(10000)!
+[1] Start Calculating Recall
+[1] stdrecall: 0.064134, maxrecall: 1.00, minrecall: 0.20
+[1] 
+Recall Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Min
+[1] 0.972	1.000	0.900	0.800	0.700	0.500	0.200
+[1] Recall10@10: 0.971877
+[1] Searching: numThread: 4, numQueries: 10000, searchTimes: 1.
+[1] Current time: 805, Searching Times: 1, AvgQPS: 1555.45.
+[1] 
+Ex Elements Count:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 7330.735	5754.000	15208.000	18881.000	26544.000	40427.000	50027.000
+[1] 
+Head Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.347	0.345	0.395	0.412	0.459	0.525	2.021
+[1] 
+Setup Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.007	0.007	0.007	0.007	0.007	0.015	0.035
+[1] 
+Comp Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.267	0.208	0.539	0.678	1.050	1.773	2.291
+[1] 
+SPDK Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 1.878	1.533	3.548	4.383	6.129	10.263	12.619
+[1] 
+Ex Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 2.220	1.812	4.163	5.136	7.304	12.157	14.910
+[1] 
+Total Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 2.568	2.170	4.532	5.489	7.672	12.529	15.266
+[1] 
+Total Disk Page Access Distribution(KB):
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 1100.516	 864	2257	2801	3981	6426	7701
+[1] 
+Total Disk IO Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 307.101	 248	 597	 731	1026	1639	1957
+[1] 
+[1] Start loading TruthFile...: /home/sosp/data/sift_data/bigann2m_update_clustering_origin_truth0
+[4] K: 10, TruthResultNum: 100
+[4] Truth number is larger than query number(10000)!
+[1] Start Calculating Recall
+[1] stdrecall: 0.049282, maxrecall: 1.00, minrecall: 0.20
+[1] 
+Recall Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Min
+[1] 0.983	1.000	0.900	0.900	0.800	0.600	0.200
+[1] Recall10@10: 0.982789
+[1] Searching: numThread: 4, numQueries: 10000, searchTimes: 1.
+[1] Current time: 812, Searching Times: 1, AvgQPS: 1305.82.
+[1] 
+Ex Elements Count:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 8859.325	7012.000	18256.000	22512.000	31416.000	46550.000	59334.000
+[1] 
+Head Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.344	0.342	0.389	0.403	0.447	0.507	1.982
+[1] 
+Setup Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.007	0.007	0.007	0.007	0.009	0.014	0.016
+[1] 
+Comp Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.301	0.231	0.611	0.776	1.223	1.981	2.772
+[1] 
+SPDK Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 2.327	1.909	4.419	5.404	7.462	11.772	15.050
+[1] 
+Ex Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 2.715	2.216	5.121	6.276	8.775	13.967	17.936
+[1] 
+Total Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 3.059	2.564	5.485	6.631	9.155	14.342	18.300
+[1] 
+Total Disk Page Access Distribution(KB):
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 1354.714	1075	2760	3413	4766	7477	9285
+[1] 
+Total Disk IO Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 378.615	 309	 731	 893	1235	1909	2362
+[1] 
+[1] Start loading TruthFile...: /home/sosp/data/sift_data/bigann2m_update_clustering_origin_truth0
+[4] K: 10, TruthResultNum: 100
+[4] Truth number is larger than query number(10000)!
+[1] Start Calculating Recall
+[1] stdrecall: 0.040068, maxrecall: 1.00, minrecall: 0.30
+[1] 
+Recall Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Min
+[1] 0.989	1.000	1.000	0.900	0.800	0.700	0.300
+[1] Recall10@10: 0.988530
+[1] Searching: numThread: 4, numQueries: 10000, searchTimes: 1.
+[1] Current time: 819, Searching Times: 1, AvgQPS: 1121.70.
+[1] 
+Ex Elements Count:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 10327.682	8212.000	21264.000	25901.000	36412.000	54183.000	70351.000
+[1] 
+Head Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.344	0.343	0.387	0.399	0.428	0.516	1.941
+[1] 
+Setup Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.007	0.007	0.008	0.008	0.010	0.014	0.016
+[1] 
+Comp Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.348	0.266	0.716	0.902	1.407	2.511	3.222
+[1] 
+SPDK Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 2.770	2.277	5.224	6.362	8.858	13.975	18.287
+[1] 
+Ex Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 3.217	2.644	6.063	7.355	10.365	16.434	21.638
+[1] 
+Total Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 3.561	3.000	6.412	7.695	10.736	16.811	21.997
+[1] 
+Total Disk Page Access Distribution(KB):
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 1605.137	1281	3252	3988	5617	8711	11178
+[1] 
+Total Disk IO Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 449.182	 369	 861	1046	1451	2228	2844
+[1] 
+[1] Start loading TruthFile...: /home/sosp/data/sift_data/bigann2m_update_clustering_origin_truth0
+[4] K: 10, TruthResultNum: 100
+[4] Truth number is larger than query number(10000)!
+[1] Start Calculating Recall
+[1] stdrecall: 0.033895, maxrecall: 1.00, minrecall: 0.30
+[1] 
+Recall Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Min
+[1] 0.992	1.000	1.000	0.900	0.900	0.700	0.300
+[1] Recall10@10: 0.991680
+[1] Searching: numThread: 4, numQueries: 10000, searchTimes: 1.
+[1] Current time: 828, Searching Times: 1, AvgQPS: 969.09.
+[1] 
+Ex Elements Count:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 11757.837	9435.000	24076.000	29363.000	40176.000	59951.000	76642.000
+[1] 
+Head Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.361	0.360	0.408	0.421	0.447	0.517	2.111
+[1] 
+Setup Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.007	0.007	0.008	0.008	0.010	0.015	0.051
+[1] 
+Comp Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.453	0.342	0.946	1.222	1.860	2.986	4.049
+[1] 
+SPDK Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 3.194	2.634	6.037	7.252	10.046	16.261	20.870
+[1] 
+Ex Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 3.761	3.097	7.090	8.626	11.992	19.203	25.069
+[1] 
+Total Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 4.122	3.460	7.477	9.002	12.371	19.585	25.481
+[1] 
+Total Disk Page Access Distribution(KB):
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 1853.961	1488	3737	4559	6351	9934	12248
+[1] 
+Total Disk IO Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 519.368	 428	 990	1195	1645	2535	3118
+[1] 
+[1] Start loading TruthFile...: /home/sosp/data/sift_data/bigann2m_update_clustering_origin_truth0
+[4] K: 10, TruthResultNum: 100
+[4] Truth number is larger than query number(10000)!
+[1] Start Calculating Recall
+[1] stdrecall: 0.029401, maxrecall: 1.00, minrecall: 0.40
+[1] 
+Recall Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Min
+[1] 0.994	1.000	1.000	0.900	0.900	0.700	0.400
+[1] Recall10@10: 0.993630
+[1] Searching: numThread: 4, numQueries: 10000, searchTimes: 1.
+[1] Current time: 839, Searching Times: 1, AvgQPS: 871.08.
+[1] 
+Ex Elements Count:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 13142.907	10636.000	26788.000	32514.000	44482.000	67002.000	82489.000
+[1] 
+Head Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.354	0.353	0.399	0.411	0.436	0.481	1.940
+[1] 
+Setup Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.007	0.007	0.007	0.009	0.011	0.015	0.019
+[1] 
+Comp Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 0.470	0.355	0.979	1.277	1.958	3.229	4.241
+[1] 
+SPDK Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 3.637	3.027	6.847	8.203	11.398	18.023	22.457
+[1] 
+Ex Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 4.233	3.506	7.988	9.617	13.431	21.154	26.871
+[1] 
+Total Latency Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 4.587	3.865	8.356	9.996	13.847	21.503	27.256
+[1] 
+Total Disk Page Access Distribution(KB):
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 2099.716	1702	4221	5114	7137	11037	13367
+[1] 
+Total Disk IO Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Max
+[1] 588.784	 489	1120	1343	1852	2820	3408
+[1] 
+[1] Start loading TruthFile...: /home/sosp/data/sift_data/bigann2m_update_clustering_origin_truth0
+[4] K: 10, TruthResultNum: 100
+[4] Truth number is larger than query number(10000)!
+[1] Start Calculating Recall
+[1] stdrecall: 0.025121, maxrecall: 1.00, minrecall: 0.50
+[1] 
+Recall Distribution:
+[1] Avg	50tiles	90tiles	95tiles	99tiles	99.9tiles	Min
+[1] 0.995	1.000	1.000	1.000	0.900	0.800	0.500
+[1] Recall10@10: 0.995110
+[1] Save mapping To 
+SPDKIO::BlockController::SpdkStop: finalized

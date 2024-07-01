@@ -1,6 +1,5 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
-
 set(AnnService ${PROJECT_SOURCE_DIR}/AnnService)
 set(Zstd ${PROJECT_SOURCE_DIR}/ThirdParty/zstd)
 set(Spdk ${PROJECT_SOURCE_DIR}/ThirdParty/spdk/build)

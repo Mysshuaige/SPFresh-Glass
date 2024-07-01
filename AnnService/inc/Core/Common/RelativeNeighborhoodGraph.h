@@ -3,7 +3,8 @@
 
 #ifndef _SPTAG_COMMON_RNG_H_
 #define _SPTAG_COMMON_RNG_H_
-
+#include <vector>
+#include <math.h>
 #include "NeighborhoodGraph.h"
 
 namespace SPTAG
@@ -17,6 +18,7 @@ namespace SPTAG
 
             void RebuildNeighbors(VectorIndex* index, const SizeType node, SizeType* nodes, const BasicResult* queryResults, const int numResults) {
                 DimensionType count = 0;
+		std::vector<float> node2k;
                 for (int j = 0; j < numResults && count < m_iNeighborhoodSize; j++) {
                     const BasicResult& item = queryResults[j];
                     if (item.VID < 0) break;
@@ -24,14 +26,24 @@ namespace SPTAG
 
                     bool good = true;
                     for (DimensionType k = 0; k < count; k++) {
-                        if (m_fRNGFactor * index->ComputeDistance(index->GetSample(nodes[k]), index->GetSample(item.VID)) < item.Dist) {
+			    float K2VID = index->ComputeDistance(index->GetSample(nodes[k]), index->GetSample(item.VID));
+                        if( (m_fRNGFactor * K2VID) < item.Dist) {
                             good = false;
                             break;
                         }
+                     /*   if ((item.Dist * item.Dist + node2k[k] * node2k[k] - K2VID * K2VID) / (2 *  item.Dist*node2k[k]) > 0.6) {    
+			//if ((item.Dist + node2k[k] - index -> ComputeDistance(index->GetSample(nodes[k]), index->GetSample(item.VID)) / (2 * sqrt(item.Dist)*sqrt(node2k[k]))) > 0.89) {
+                            good = false;
+                            break;
+                        }*/
                     }
-                    if (good) nodes[count++] = item.VID;
+                    //if (good) nodes[count++] = item.VID;
+		    if (good) {
+                        nodes[count++] = item.VID;
+                        node2k.push_back(item.Dist);
+                    }
                 }
-                for (DimensionType j = count; j < m_iNeighborhoodSize; j++)  nodes[j] = -1;
+               for (DimensionType j = count; j < m_iNeighborhoodSize; j++)  nodes[j] = -1;
             }
 
             void InsertNeighbors(VectorIndex* index, const SizeType node, SizeType insertNode, float insertDist)

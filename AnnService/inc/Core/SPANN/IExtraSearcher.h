@@ -15,6 +15,9 @@
 #include <chrono>
 #include <atomic>
 #include <set>
+#include <utility>
+#include <unordered_map>
+#include <climits>
 
 namespace SPTAG {
     namespace SPANN {
@@ -24,7 +27,11 @@ namespace SPTAG {
             SearchStats()
                 : m_check(0),
                 m_exCheck(0),
-                m_totalListElementsCount(0),
+                m_totalListElementsCount(0),  // MYS6 统计变量声明
+                m_maxPostingsize(0),
+                m_minPostingsize(INT_MAX),
+                m_totalDiskIOCount(0),
+                m_totalBytes(0),
                 m_diskIOCount(0),
                 m_diskAccessCount(0),
                 m_totalSearchLatency(0),
@@ -42,7 +49,15 @@ namespace SPTAG {
 
             int m_exCheck;
 
-            int m_totalListElementsCount;
+            long long m_totalListElementsCount;   // MYS6 统计变量声明
+            
+            int m_maxPostingsize;
+
+            int m_minPostingsize;
+
+            long long m_totalDiskIOCount;
+
+            long long m_totalBytes;
 
             int m_diskIOCount;
 
@@ -297,3 +312,4 @@ namespace SPTAG {
 } // SPTAG
 
 #endif // _SPTAG_SPANN_IEXTRASEARCHER_H_
+

@@ -1189,7 +1189,8 @@ namespace SPTAG::SPANN {
                     }
                 }
             }
-
+	    p_stats -> m_totalDiskIOCount += diskIO;
+            p_stats ->  m_totalListElementsCount+= diskIO;
             if (p_stats)
             {
                 p_stats->m_compLatency = compLatency / 1000;

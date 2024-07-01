@@ -301,7 +301,7 @@ break;
             template <typename T>
             void BuildInitKNNGraph(VectorIndex* index, const std::unordered_map<SizeType, SizeType>* idmap)
             {
-
+		        printf("m_iNeighborhoodSize:%d\n", m_iNeighborhoodSize);
                 COMMON::Dataset<float> NeighborhoodDists(m_iGraphSize, m_iNeighborhoodSize, index->m_iDataBlockSize, index->m_iDataCapacity);
                 std::vector<std::vector<SizeType>> TptreeDataIndices(m_iTPTNumber, std::vector<SizeType>(m_iGraphSize));
                 std::vector<std::vector<std::pair<SizeType, SizeType>>> TptreeLeafNodes(m_iTPTNumber, std::vector<std::pair<SizeType, SizeType>>());
@@ -460,6 +460,7 @@ break;
             template <typename T>
             void RefineGraph(VectorIndex* index, const std::unordered_map<SizeType, SizeType>* idmap = nullptr)
             {
+	/*	//printf("===================RefineGraph:%d\n", m_iRefineIter);
                 for (int iter = 0; iter < m_iRefineIter - 1; iter++)
                 {
                     auto t1 = std::chrono::high_resolution_clock::now();
@@ -471,10 +472,10 @@ break;
                     }
                     auto t2 = std::chrono::high_resolution_clock::now();
                     LOG(Helper::LogLevel::LL_Info, "Refine RNG time (s): %lld Graph Acc: %f\n", std::chrono::duration_cast<std::chrono::seconds>(t2 - t1).count(), GraphAccuracyEstimation(index, 100, idmap));
-                }
+                }*/
 
                 m_iNeighborhoodSize = (DimensionType)(m_iNeighborhoodSize / m_fNeighborhoodScale);
-
+		        //printf("===================RefineGraph:%d\n", m_iRefineIter);
                 if (m_iRefineIter > 0) {
                     auto t1 = std::chrono::high_resolution_clock::now();
 #pragma omp parallel for schedule(dynamic)
@@ -543,7 +544,7 @@ break;
                 }
                 index->RefineSearchIndex(query, searchDeleted);
                 RebuildNeighbors(index, node, m_pNeighborhoodGraph[node], query.GetResults(), CEF + 1);
-                if (rec_query)
+		if (rec_query)
                 {
                     ALIGN_FREE(rec_query);
                 }

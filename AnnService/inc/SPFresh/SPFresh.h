@@ -267,7 +267,7 @@ namespace SPTAG {
                 std::vector<std::thread> threads;
 
                 StopWSPFresh sw;
-
+                long long totalSearchVectors = 0, totalDiskIO = 0;
                 auto func = [&]()
                 {
                     p_index->Initialize();
@@ -286,6 +286,8 @@ namespace SPTAG {
 
                             p_index->SearchDiskIndex(p_results[index], &(p_stats[index]));
                             double exEndTime = threadws.getElapsedMs();
+			                totalSearchVectors += p_stats[index].m_totalListElementsCount;
+                            totalDiskIO += p_stats[index].m_totalDiskIOCount;
 
                             p_stats[index].m_exLatency = exEndTime - endTime;
                             p_stats[index].m_totalLatency = p_stats[index].m_totalSearchLatency = exEndTime - startTime;
@@ -301,6 +303,7 @@ namespace SPTAG {
                 for (auto& thread : threads) { thread.join(); }
 
                 auto sendingCost = sw.getElapsedSec();
+                printf("mysmys total search vectors:%lld,  totalDiskIO:%lld, IOPS:%f\n", totalSearchVectors, totalDiskIO, totalDiskIO/sendingCost);
 
                 return numQueries / sendingCost;
             }

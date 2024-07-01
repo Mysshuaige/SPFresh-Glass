@@ -11,6 +11,7 @@
 #include "inc/Helper/SimpleIniReader.h"
 #include <unordered_set>
 #include "inc/Core/Common/IQuantizer.h"
+#include "inc/Core/SPANN/Options.h"
 
 namespace SPTAG
 {
@@ -89,6 +90,9 @@ public:
     virtual ErrorCode SearchIndex(const void* p_vector, int p_vectorCount, int p_neighborCount, bool p_withMeta, BasicResult* p_results) const;
 
     virtual void ApproximateRNG(std::shared_ptr<VectorSet>& fullVectors, std::unordered_set<SizeType>& exceptIDS, int candidateNum, Edge* selections, int replicaCount, int numThreads, int numTrees, int leafSize, float RNGFactor, int numGPUs);
+
+    // MYS3 Build glass SSDIndex 函数声明
+    virtual void ApproximateRNG_mys(std::shared_ptr<VectorSet>& fullVectors, std::unordered_set<SizeType>& exceptIDS, int candidateNum, Edge* selections, int numThreads, SPANN::Options& opts);
 
     static void SortSelections(std::vector<Edge>* selections);
 

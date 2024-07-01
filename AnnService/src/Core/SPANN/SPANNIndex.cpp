@@ -5,10 +5,12 @@
 #include "inc/Helper/VectorSetReaders/MemoryReader.h"
 #include "inc/Core/SPANN/ExtraStaticSearcher.h"
 #include "inc/Core/SPANN/ExtraDynamicSearcher.h"
+#include "/home/sosp/SPFresh/pyglass/glass/hnsw/hnsw.hpp"
+#include "/home/sosp/SPFresh/pyglass/glass/searcher.hpp"
 #include <shared_mutex>
 #include <chrono>
 #include <random>
-
+#include <filesystem>
 #pragma warning(disable:4242)  // '=' : conversion from 'int' to 'short', possible loss of data
 #pragma warning(disable:4244)  // '=' : conversion from 'int' to 'short', possible loss of data
 #pragma warning(disable:4127)  // conditional expression is constant
@@ -212,7 +214,7 @@ namespace SPTAG
                                 memcpy(ptr + sizeof(int) + sizeof(uint8_t), vectorInfo + sizeof(int), m_vectorInfoSize - sizeof(uint8_t) - sizeof(int));
                             }
 
-                            if (m_options.m_excludehead) {
+                           /* if (m_options.m_excludehead) {
                                 auto VIDTrans = static_cast<SizeType>((m_vectorTranslateMap.get())[index]);
                                 uint8_t version = m_versionMap.GetVersion(VIDTrans);
                                 std::string appendPosting(m_vectorInfoSize, '\0');
@@ -221,7 +223,7 @@ namespace SPTAG
                                 memcpy(ptr + sizeof(VIDTrans), &version, sizeof(version));
                                 memcpy(ptr + sizeof(int) + sizeof(uint8_t), m_index->GetSample(index), m_vectorInfoSize - sizeof(int) + sizeof(uint8_t));
                                 newPosting = appendPosting + newPosting;
-                            }
+                            }*/
 
                             m_extraSearcher->GetWritePosting(index, newPosting, true);
                         }
@@ -399,24 +401,27 @@ namespace SPTAG
                 {
                     m_workspace->m_postingIDs.emplace_back(res->VID);
                 }
-                if (m_vectorTranslateMap.get() != nullptr) res->VID = static_cast<SizeType>((m_vectorTranslateMap.get())[res->VID]);
-                else {
+
+                // MYS7 这里是在将Head进行转换之后放到结果里面，应该将Head都清除
+                // if (m_vectorTranslateMap.get() != nullptr) res->VID = static_cast<SizeType>((m_vectorTranslateMap.get())[res->VID]);
+                // else {
                     res->VID = -1;
                     res->Dist = MaxDist;
-                }
+                // }
             }
 
             for (; i < p_queryResults->GetResultNum(); ++i)
             {
                 auto res = p_queryResults->GetResult(i);
                 if (res->VID == -1) break;
-                if (m_vectorTranslateMap.get() != nullptr)  res->VID = static_cast<SizeType>((m_vectorTranslateMap.get())[res->VID]);
-                else {
+                // MYS7 这里是在将Head进行转换之后放到结果里面，应该将Head都清除
+                // if (m_vectorTranslateMap.get() != nullptr)  res->VID = static_cast<SizeType>((m_vectorTranslateMap.get())[res->VID]);
+                // else {
                     res->VID = -1;
                     res->Dist = MaxDist;
-                }
+                // }
             }
-            if (m_vectorTranslateMap.get() != nullptr) p_queryResults->Reverse();
+            if (m_vectorTranslateMap.get() != nullptr) p_queryResults->Reverse(); // 为什么要reverse？
             m_extraSearcher->SearchIndex(m_workspace.get(), *p_queryResults, m_index, p_stats);
             p_queryResults->SortResult();
             return ErrorCode::Success;
@@ -791,7 +796,24 @@ namespace SPTAG
 
             LOG(Helper::LogLevel::LL_Info, "Begin Build Head...\n");
             if (m_options.m_buildHead) {
-                auto valueType = m_pQuantizer ? SPTAG::VectorValueType::UInt8 : m_options.m_valueType;
+
+                // MYS2 Build glass index
+                std::string HeadVectorPath = m_options.m_indexDirectory + FolderSep + m_options.m_headVectorFile;
+                Item item = LoadHeadVectors_mys(HeadVectorPath, -1);
+                size_t dim = item.d, n = item.n;
+                std::cout << "headvectorInfo dim: " << dim << " total vector: " << n << std::endl;
+                float* base = item.getRawData();
+                std::string graph_path = "/home/sosp/testdata/store_sift_cluster_2m/glass_test.bin";
+
+		        m_options.glassIndexPath = graph_path;
+                //构建
+                if (!std::filesystem::exists(graph_path)) {
+                    glass::HNSW hnsw(dim, "L2", 32, 200);
+                    hnsw.Build(base, n);
+                //保存
+                    hnsw.final_graph.save(graph_path);
+                }    
+                /*auto valueType = m_pQuantizer ? SPTAG::VectorValueType::UInt8 : m_options.m_valueType;
                 auto dims = m_pQuantizer ? m_pQuantizer->GetNumSubvectors() : m_options.m_dim;
 
                 m_index = SPTAG::VectorIndex::CreateInstance(m_options.m_indexAlgoType, valueType);
@@ -824,7 +846,7 @@ namespace SPTAG
                 m_index.reset();
                 if (LoadIndex(m_options.m_indexDirectory + FolderSep + m_options.m_headIndexFolder, m_index) != ErrorCode::Success) {
                     LOG(Helper::LogLevel::LL_Error, "Cannot load head index from %s!\n", (m_options.m_indexDirectory + FolderSep + m_options.m_headIndexFolder).c_str());
-                }
+                }*/
             }
             auto t3 = std::chrono::high_resolution_clock::now();
             double buildHeadTime = std::chrono::duration_cast<std::chrono::seconds>(t3 - t2).count();

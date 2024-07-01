@@ -3,6 +3,17 @@
 
 #pragma once
 #include <limits>
+#include <climits>
+#include <algorithm>
+#include <set>
+//TODOMYS
+#include <vector>
+#include <fstream>
+#include <sstream>
+#include <string>
+#include "glass/hnsw/hnsw.hpp"
+#include "glass/searcher.hpp"
+#include "inc/Core/SPANN/Options.h"
 
 #include "inc/Core/Common.h"
 #include "inc/Core/Common/DistanceUtils.h"
@@ -161,6 +172,92 @@ namespace SPTAG {
                 for (int i = 0; i < numQueries; i++) { p_results[i].CleanQuantizedTarget(); }
             }
 
+            // MYS5 Search Result第二个为传入query的指针数组
+            template <typename ValueType>
+            void SearchSequential_mys(SPANN::Index<ValueType>* p_index, int p_numThreads,std::vector<QueryResult>& p_results, std::vector<SPANN::SearchStats>& p_stats, SPANN::Options p_opts, int p_internalResultNum, float (*floatArray)[128])
+            {
+                int numQueries = min(static_cast<int>(p_results.size()), p_opts.m_queryCountLimit);
+
+                std::atomic_size_t queriesSent(0);
+
+                std::vector<std::thread> threads;
+
+                LOG(Helper::LogLevel::LL_Info, "Searching: numThread: %d, numQueries: %d.\n", p_numThreads, numQueries);
+
+                // MYS6 统计相关变量
+                int  maxPostingSize = 0, minPostingSize = INT_MAX;
+                long long totalSearchVectors = 0, totalDiskIO = 0;
+
+                glass::Graph<int> graph;
+                graph.load(p_opts.glassIndexPath);
+                std::string HeadVectorPath = p_opts.m_indexDirectory + FolderSep + p_opts.m_headVectorFile;
+	            auto item = SPTAG::SPANN::Index<float>::LoadHeadVectors_mys(HeadVectorPath, -1);
+                auto searcher = glass::create_searcher(graph, "L2", 1); // 需要传入level
+                searcher->SetData(item.getRawData(), item.n, item.d);
+                searcher->Optimize(16);
+                searcher->SetEf(200);
+                Utils::StopW sw;
+
+                for (int i = 0; i < p_numThreads; i++) { threads.emplace_back([&, i]()
+                    {
+                        p_index->Initialize();
+
+                        Utils::StopW threadws;
+                        size_t index = 0;
+                        while (true)
+                        {
+                            index = queriesSent.fetch_add(1);
+                            std::vector<int> res(p_internalResultNum, -1);
+                            std::vector<float> dist(p_internalResultNum);
+                            if (index < numQueries)
+                            {
+                                if ((index & ((1 << 14) - 1)) == 0)
+                                {
+                                    LOG(Helper::LogLevel::LL_Info, "Sent %.2lf%%...\n", index * 100.0 / numQueries);
+                                }
+
+                                double startTime0 = threadws.getElapsedMs();
+                                // p_index->GetMemoryIndex()->SearchIndex(p_results[index]);
+                                searcher->Search(floatArray[index], p_internalResultNum, res.data(), dist.data());  // MYS5 Search Result
+                                for (int i = res.size() - 1, j = 0; i >= 0; i --, j ++) {
+                                    p_results[index].SetResult(j, res[i], dist[i]);
+                                }
+                                double endTime = threadws.getElapsedMs();
+                                p_index->SearchDiskIndex(p_results[index], &(p_stats[index]));
+                                double exEndTime = threadws.getElapsedMs();
+
+                                // MYS6 统计相关变量
+                                // totalSearchVectors += p_stats[index].m_totalListElementsCount;
+                                // maxPostingSize = std::max(p_stats[index].m_maxPostingsize, maxPostingSize);
+                                // minPostingSize = std::min(p_stats[index].m_minPostingsize, minPostingSize);
+                                // totalDiskIO += p_stats[index].m_totalDiskIOCount;
+                                // p_stats[index].m_exLatency = exEndTime - endTime;
+                                // p_stats[index].m_totalLatency = p_stats[index].m_totalSearchLatency = exEndTime - startTime;
+                            }
+                            else
+                            {
+                                return;
+                            }
+                        }
+                    });
+                }
+                for (auto& thread : threads) { thread.join(); }
+
+                double sendingCost = sw.getElapsedSec();
+
+                LOG(Helper::LogLevel::LL_Info,
+                    "Finish sending in %.3lf seconds, actuallQPS is %.2lf, query count %u.\n",
+                    sendingCost,
+                    numQueries / sendingCost,
+                    static_cast<uint32_t>(numQueries));
+
+                for (int i = 0; i < numQueries; i++) { p_results[i].CleanQuantizedTarget(); }
+                // MYS6 打印相关变量
+                printf("total search vectors:%lld, maxPostingSize: %d, minPostingSize: %d, totalDiskIO:%lld, IOPS:%f\n", totalSearchVectors, maxPostingSize, minPostingSize, totalDiskIO, totalDiskIO/sendingCost);
+
+            }
+
+
             template <typename ValueType>
             void Search(SPANN::Index<ValueType>* p_index)
             {
@@ -183,7 +280,7 @@ namespace SPTAG {
                 int K = p_opts.m_resultNum;
                 int truthK = (p_opts.m_truthResultNum <= 0) ? K : p_opts.m_truthResultNum;
 
-                if (!warmupFile.empty())
+                /*if (!warmupFile.empty())
                 {
                     LOG(Helper::LogLevel::LL_Info, "Start loading warmup query set...\n");
                     std::shared_ptr<Helper::ReaderOptions> queryOptions(new Helper::ReaderOptions(p_opts.m_valueType, p_opts.m_dim, p_opts.m_warmupType, p_opts.m_warmupDelimiter));
@@ -207,7 +304,7 @@ namespace SPTAG {
                     LOG(Helper::LogLevel::LL_Info, "Start warmup...\n");
                     SearchSequential(p_index, numThreads, warmupResults, warmpUpStats, p_opts.m_queryCountLimit, internalResultNum);
                     LOG(Helper::LogLevel::LL_Info, "\nFinish warmup...\n");
-                }
+                }*/
 
                 LOG(Helper::LogLevel::LL_Info, "Start loading QuerySet...\n");
                 std::shared_ptr<Helper::ReaderOptions> queryOptions(new Helper::ReaderOptions(p_opts.m_valueType, p_opts.m_dim, p_opts.m_queryType, p_opts.m_queryDelimiter));
@@ -222,16 +319,27 @@ namespace SPTAG {
 
                 std::vector<QueryResult> results(numQueries, QueryResult(NULL, max(K, internalResultNum), false));
                 std::vector<SPANN::SearchStats> stats(numQueries);
+                // MYS5 Search Result 获取query向量的指针
+                float (*query_float32)[128] = new float[10000][128];
                 for (int i = 0; i < numQueries; ++i)
                 {
                     (*((COMMON::QueryResultSet<ValueType>*)&results[i])).SetTarget(reinterpret_cast<ValueType*>(querySet->GetVector(i)), p_index->m_pQuantizer);
                     results[i].Reset();
+                    // MYS5 Search Result 获取query向量的指针
+                    uint8_t* tempUInt8 = (uint8_t*)querySet->GetVector(i);
+                    for (int j = 0; j < p_opts.m_dim; j ++) {
+                        query_float32[i][j] = tempUInt8[j];
+                    }
                 }
 
 
                 LOG(Helper::LogLevel::LL_Info, "Start ANN Search...\n");
 
-                SearchSequential(p_index, numThreads, results, stats, p_opts.m_queryCountLimit, internalResultNum);
+                //SearchSequential(p_index, numThreads, results, stats, p_opts.m_queryCountLimit, internalResultNum);  // 原版
+                SearchSequential_mys(p_index, numThreads, results, stats, p_opts, internalResultNum, query_float32);// MYS5 Search Result 传入转换好的query
+
+                delete query_float32;
+
 
                 LOG(Helper::LogLevel::LL_Info, "\nFinish ANN Search...\n");
 
