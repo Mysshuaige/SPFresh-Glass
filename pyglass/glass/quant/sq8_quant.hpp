@@ -50,7 +50,9 @@ template <Metric metric, int DIM = 0> struct SQ8Quantizer {
 
   void encode(const float *from, char *to) const {
     for (int j = 0; j < d; ++j) {
+        /*
       float x = (from[j] - mi[j]) / dif[j];
+
       if (x < 0) {
         x = 0.0;
       }
@@ -59,21 +61,26 @@ template <Metric metric, int DIM = 0> struct SQ8Quantizer {
       }
       uint8_t y = x * 255;
       to[j] = y;
+         */
+
+        to[j] = static_cast<uint8_t>(from[j]);
+
     }
   }
 
   template <typename Pool>
-  void reorder(const Pool &pool, const float * /**q*/, int *dst, int k, float* dists = nullptr) const {  // MYS4 glass Search 修改reorder 判断是否传入距离数组，如果传入距离数组说明需要返回距离
-    for (int i = 0; i < k; ++i) {
-      dst[i] = pool.id(i);
-    }
+  void reorder(const Pool &pool, const float * /**q*/, int *dst, int k, float* dists = nullptr) const {
+      if(dists == nullptr)
+          for (int i = 0; i < k; ++i) {
+              dst[i] = pool.id(i);
+          }
+      else
+          for (int i = 0; i < k; ++i) {
+              dst[i] = pool.id(i);
+              dists[i] = pool.dist(i);
+              // std::cout << dists[i] << std::endl;
+          }
   }
-
-   //TODOMYS
-  /*template <typename Pool>
-  void reorder_mys(const Pool &pool, const float *q, int *dst, float* dstdst, int k) const {
-  	printf("sq8_quant.hpp reorder_mys TODO MYS\n");
-  }*/
 
   template <int DALIGN = do_align(DIM, kAlign)> struct Computer {
     using dist_type = float;

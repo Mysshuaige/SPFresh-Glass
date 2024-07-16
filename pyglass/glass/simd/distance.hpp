@@ -266,35 +266,38 @@ inline float IP(const float *x, const float *y, int d) {
 
 inline float L2SqrSQ8_ext(const float *x, const uint8_t *y, int d,
                           const float *mi, const float *dif) {
+
 #if defined(__AVX512F__)
-  __m512 sum = _mm512_setzero_ps();
-  __m512 dot5 = _mm512_set1_ps(0.5f);
-  __m512 const_255 = _mm512_set1_ps(255.0f);
-  for (int i = 0; i < d; i += 16) {
-    //auto zz = _mm_loadu_epi8(y + i);
-    auto zz = _mm_loadu_si128((__m128i*)(y + i));
-    auto zzz = _mm512_cvtepu8_epi32(zz);
-    auto yy = _mm512_cvtepi32_ps(zzz);
-    yy = _mm512_add_ps(yy, dot5);
-    auto mi512 = _mm512_loadu_ps(mi + i);
-    auto dif512 = _mm512_loadu_ps(dif + i);
-    yy = _mm512_mul_ps(yy, dif512);
-    yy = _mm512_add_ps(yy, _mm512_mul_ps(mi512, const_255));
-    auto xx = _mm512_loadu_ps(x + i);
-    auto d = _mm512_sub_ps(_mm512_mul_ps(xx, const_255), yy);
-    sum = _mm512_fmadd_ps(d, d, sum);
-  }
-  return reduce_add_f32x16(sum);
+    __m512 sum = _mm512_setzero_ps();
+    int i = 0;
+
+    // 处理主要的16元素块
+    for (; i <= d - 16; i += 16) {
+        auto zz = _mm_loadu_si128(reinterpret_cast<const __m128i*>(y + i));
+        auto zzz = _mm512_cvtepu8_epi32(zz); 
+        auto yy = _mm512_cvtepi32_ps(zzz);       
+        auto xx = _mm512_loadu_ps(x + i);
+        auto diff = _mm512_sub_ps(xx, yy);
+        sum = _mm512_fmadd_ps(diff, diff, sum);
+    }
+    // 处理剩余不足16个元素的部分
+    float tail_sum = 0.0f;
+    for (; i < d; ++i) {
+        float yy = static_cast<float>(y[i]);
+        auto dif = x[i] - yy;
+        tail_sum += dif * dif;
+    }
+    return reduce_add_f32x16(sum) + tail_sum;
 #else
-  float sum = 0.0;
-  for (int i = 0; i < d; ++i) {
-    float yy = (y[i] + 0.5f);
-    yy = yy * dif[i] + mi[i] * 255.0f;
-    auto dif = x[i] * 255.0f - yy;
-    sum += dif * dif;
-  }
-  return sum;
+    float sum = 0.0;
+    for (int i = 0; i < d; ++i) {
+        float yy = static_cast<float>(y[i]);
+        auto dif = x[i] - yy;
+        sum += dif * dif;
+    }
+    return sum;
 #endif
+
 }
 
 inline float IPSQ8_ext(const float *x, const uint8_t *y, int d, const float *mi,

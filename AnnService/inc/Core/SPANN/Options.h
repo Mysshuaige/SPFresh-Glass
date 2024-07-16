@@ -16,11 +16,15 @@ namespace SPTAG {
         {
         public:
             // MYS1 glass options 参数声明
-            std::string glassIndexPath;
-            int level;
-            int topk;
-            int search_ef;
-            int glass_num_thread;
+            std::string m_glassIndexPath;
+            int m_glassLevel;
+            int m_glassTopk;
+            int m_glassEFSSD;
+            int m_glassEFSearch;
+            int m_glassNumThread;
+            int m_glassOptimize;
+            int m_glassM;
+            int m_glassEFConstruction;
             //std::shared_ptr<float> base;
 
             VectorValueType m_valueType;

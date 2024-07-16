@@ -403,11 +403,11 @@ namespace SPTAG
                 }
 
                 // MYS7 这里是在将Head进行转换之后放到结果里面，应该将Head都清除
-                // if (m_vectorTranslateMap.get() != nullptr) res->VID = static_cast<SizeType>((m_vectorTranslateMap.get())[res->VID]);
-                // else {
+                if (m_vectorTranslateMap.get() != nullptr) res->VID = static_cast<SizeType>((m_vectorTranslateMap.get())[res->VID]);
+                else {
                     res->VID = -1;
                     res->Dist = MaxDist;
-                // }
+                }
             }
 
             for (; i < p_queryResults->GetResultNum(); ++i)
@@ -415,11 +415,11 @@ namespace SPTAG
                 auto res = p_queryResults->GetResult(i);
                 if (res->VID == -1) break;
                 // MYS7 这里是在将Head进行转换之后放到结果里面，应该将Head都清除
-                // if (m_vectorTranslateMap.get() != nullptr)  res->VID = static_cast<SizeType>((m_vectorTranslateMap.get())[res->VID]);
-                // else {
+                if (m_vectorTranslateMap.get() != nullptr)  res->VID = static_cast<SizeType>((m_vectorTranslateMap.get())[res->VID]);
+                else {
                     res->VID = -1;
                     res->Dist = MaxDist;
-                // }
+                }
             }
             if (m_vectorTranslateMap.get() != nullptr) p_queryResults->Reverse(); // 为什么要reverse？
             m_extraSearcher->SearchIndex(m_workspace.get(), *p_queryResults, m_index, p_stats);
@@ -801,17 +801,19 @@ namespace SPTAG
                 std::string HeadVectorPath = m_options.m_indexDirectory + FolderSep + m_options.m_headVectorFile;
                 Item item = LoadHeadVectors_mys(HeadVectorPath, -1);
                 size_t dim = item.d, n = item.n;
-                std::cout << "headvectorInfo dim: " << dim << " total vector: " << n << std::endl;
                 float* base = item.getRawData();
-                std::string graph_path = "/home/sosp/testdata/store_sift_cluster_2m/glass_test.bin";
+                std::string GlassIndexPath = "";
+                if (m_options.m_glassIndexPath == "") {
+                    GlassIndexPath += m_options.m_indexDirectory;
+                    GlassIndexPath += "/GlassIndex_" + std::to_string(n) + "_" + std::to_string(dim) + "_" + std::to_string(m_options.m_glassM) + "_" + std::to_string(m_options.m_glassEFConstruction) + ".bin";
+                }
+                
+                std::cout << "headvectorInfo dim: " << dim << " total vector: " << n << "   " << GlassIndexPath << std::endl;
 
-		        m_options.glassIndexPath = graph_path;
-                //构建
-                if (!std::filesystem::exists(graph_path)) {
-                    glass::HNSW hnsw(dim, "L2", 32, 200);
+                if (!std::filesystem::exists(GlassIndexPath)) {
+                    glass::HNSW hnsw(dim, "L2", m_options.m_glassM, m_options.m_glassEFConstruction);
                     hnsw.Build(base, n);
-                //保存
-                    hnsw.final_graph.save(graph_path);
+                    hnsw.final_graph.save(GlassIndexPath);
                 }    
                 /*auto valueType = m_pQuantizer ? SPTAG::VectorValueType::UInt8 : m_options.m_valueType;
                 auto dims = m_pQuantizer ? m_pQuantizer->GetNumSubvectors() : m_options.m_dim;

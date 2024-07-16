@@ -32,10 +32,19 @@ template <Metric metric, int DIM = 0> struct FP32Quantizer {
   char *get_data(int u) const { return codes + u * code_size; }
 
   template <typename Pool>
-  void reorder(const Pool &pool, const float *, int *dst, int k, float* dists = nullptr) const {  // MYS4 glass Search 修改reorder 判断是否传入距离数组，如果传入距离数组说明需要返回距离
-    for (int i = 0; i < k; ++i) {
-      dst[i] = pool.id(i);
-    }
+  void reorder(const Pool &pool, const float *q, int *dst, int k, float* dists = nullptr) const {
+      auto computer = this->get_computer(q);
+      //std::cout << "009传出搜索结果" << std::endl;
+      if(dists == nullptr)
+          for (int i = 0; i < k; ++i) {
+              dst[i] = pool.id(i);
+          }
+      else
+          for (int i = 0; i < k; ++i) {
+              dst[i] = pool.id(i);
+              dists[i] = computer(dst[i]);
+              // std::cout << dists[i] << std::endl;
+          }
   }
 
   template <int DALIGN = do_align(DIM, kAlign)> struct Computer {

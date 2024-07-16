@@ -510,8 +510,8 @@ public:
 
   linklistsizeint *get_linklist0(tableint internal_id) const {
     return (linklistsizeint *)(data_level0_memory_ +
-                               internal_id * size_data_per_element_ +
-                               offsetLevel0_);
+                              (long long)(internal_id * size_data_per_element_ +
+                               offsetLevel0_));
   }
 
   linklistsizeint *get_linklist0(tableint internal_id,

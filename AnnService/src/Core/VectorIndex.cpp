@@ -966,9 +966,7 @@ void VectorIndex::ApproximateRNG(std::shared_ptr<VectorSet>& fullVectors, std::u
 #endif
 // MYS3 Build glass SSDIndex 构建SSDIndex函数实现
 void VectorIndex::ApproximateRNG_mys(std::shared_ptr<VectorSet>& fullVectors, std::unordered_set<SizeType>& exceptIDS, int candidateNum, Edge* selections, int numThreads, SPANN::Options& opt_mys) {
-    // 加载glass索引
-    glass::Graph<int> graph;
-    graph.load(opt_mys.m_glassIndexPath);
+    
     std::string HeadVectorPath = opt_mys.m_indexDirectory + FolderSep + opt_mys.m_headVectorFile;
     auto item = SPTAG::SPANN::Index<float>::LoadHeadVectors_mys(HeadVectorPath, -1);
     
@@ -983,12 +981,21 @@ void VectorIndex::ApproximateRNG_mys(std::shared_ptr<VectorSet>& fullVectors, st
         splitRes.push_back(chunkPtr);            
     }
 
+    glass::Graph<int> graph;
+    std::string GlassIndexPath = "";
+    if (opt_mys.m_glassIndexPath == "") {
+        GlassIndexPath += opt_mys.m_indexDirectory;
+        GlassIndexPath += "/GlassIndex_" + std::to_string(item.n) + "_" + std::to_string(item.d) + "_" + std::to_string(opt_mys.m_glassM) + "_" + std::to_string(opt_mys.m_glassEFConstruction) + ".bin";
+    }
+    graph.load(GlassIndexPath);
+
     // 搜索
     float* base = item.getRawData();
-    auto searcher = glass::create_searcher(graph, "L2", 1); // 需要传入level
+    auto searcher = glass::create_searcher(graph, "L2", opt_mys.m_glassLevel); // 需要传入level
     searcher->SetData(base, item.n, item.d);
-    searcher->Optimize(16);
-    searcher->SetEf(256);
+    searcher->Optimize(opt_mys.m_glassOptimize);
+    searcher->SetEf(opt_mys.m_glassEFSSD);
+    
     std::vector<std::thread> threads;
     threads.reserve(numThreads);
 

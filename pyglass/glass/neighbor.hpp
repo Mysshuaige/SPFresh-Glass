@@ -188,6 +188,7 @@ template <typename dist_t> struct LinearPool {
 
   constexpr static int kMask = 2147483647;
   int get_id(int id) const { return id & kMask; }
+  dist_t dist(int i) const { return data_[i].distance; }
   void set_checked(int &id) { id |= 1 << 31; }
   bool is_checked(int id) { return id >> 31 & 1; }
 

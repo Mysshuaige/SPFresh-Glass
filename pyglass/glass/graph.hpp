@@ -42,8 +42,8 @@ template <typename node_t> struct Graph {
   }
 
   void init(int N, int K) {
-    data = (node_t *)alloc2M((size_t)N * K * sizeof(node_t));
-    std::memset(data, -1, N * K * sizeof(node_t));
+    data = (node_t *)alloc2M((unsigned long long)N * K * sizeof(node_t));
+    std::memset(data, -1, (unsigned long long)N * K * sizeof(node_t));
     this->K = K;
     this->N = N;
   }
@@ -56,7 +56,7 @@ template <typename node_t> struct Graph {
 
   node_t at(int i, int j) const { return data[i * K + j]; }
 
-  node_t &at(int i, int j) { return data[i * K + j]; }
+  node_t &at(int i, int j) { return data[(long long)i * K + j]; }
 
   void prefetch(int u, int lines) const {
     mem_prefetch((char *)edges(u), lines);

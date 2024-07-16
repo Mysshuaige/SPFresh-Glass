@@ -4,6 +4,15 @@
 #ifdef DefineBasicParameter
 
 // DefineBasicParameter(VarName, VarType, DefaultValue, RepresentStr)
+DefineBasicParameter(m_glassIndexPath, std::string, std::string(""), "GlassIndexPath")
+DefineBasicParameter(m_glassLevel, int, 1, "GlassLevel")
+DefineBasicParameter(m_glassTopk, int, 10, "GlassTopk")
+DefineBasicParameter(m_glassEFSSD, int, 256, "GlassEFSSD")
+DefineBasicParameter(m_glassEFSearch, int, 256, "GlassEFSearch")
+DefineBasicParameter(m_glassNumThread, int, 8, "GlassNumThread")
+DefineBasicParameter(m_glassOptimize, int, 16, "GlassOptimize")
+DefineBasicParameter(m_glassM, int, 32, "GlassM")
+DefineBasicParameter(m_glassEFConstruction, int, 200, "GlassEFConstruction")
 DefineBasicParameter(m_valueType, SPTAG::VectorValueType, SPTAG::VectorValueType::Undefined, "ValueType")
 DefineBasicParameter(m_distCalcMethod, SPTAG::DistCalcMethod, SPTAG::DistCalcMethod::Undefined, "DistCalcMethod")
 DefineBasicParameter(m_indexAlgoType, SPTAG::IndexAlgoType, SPTAG::IndexAlgoType::BKT, "IndexAlgoType")

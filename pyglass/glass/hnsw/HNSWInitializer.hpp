@@ -22,10 +22,10 @@ struct HNSWInitializer {
   HNSWInitializer(const HNSWInitializer &rhs) = default;
 
   int at(int level, int u, int i) const {
-    return lists[u][(level - 1) * K + i];
+    return lists[u][(long long)(level - 1) * K + i];
   }
 
-  int &at(int level, int u, int i) { return lists[u][(level - 1) * K + i]; }
+  int &at(int level, int u, int i) { return lists[u][(long long)(level - 1) * K + i]; }
 
   const int *edges(int level, int u) const {
     return lists[u].data() + (level - 1) * K;
