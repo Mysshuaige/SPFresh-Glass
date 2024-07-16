@@ -968,13 +968,14 @@ void VectorIndex::ApproximateRNG(std::shared_ptr<VectorSet>& fullVectors, std::u
 void VectorIndex::ApproximateRNG_mys(std::shared_ptr<VectorSet>& fullVectors, std::unordered_set<SizeType>& exceptIDS, int candidateNum, Edge* selections, int numThreads, SPANN::Options& opt_mys) {
     // 加载glass索引
     glass::Graph<int> graph;
-    graph.load(opt_mys.glassIndexPath);
+    graph.load(opt_mys.m_glassIndexPath);
     std::string HeadVectorPath = opt_mys.m_indexDirectory + FolderSep + opt_mys.m_headVectorFile;
     auto item = SPTAG::SPANN::Index<float>::LoadHeadVectors_mys(HeadVectorPath, -1);
     
     // MYS7 通过HeadVectorPath获取c1 c2（也就是两个虚拟节点的真实向量）
     std::vector<uint8_t> data = item.data;
     int chunkSize = item.d;
+    // const int DIM = item.d;
     std::vector<void*> splitRes;
     for (size_t i = 0; i < data.size(); i += chunkSize) {                
         // 获取当前块的指针并转换为void*
@@ -984,7 +985,7 @@ void VectorIndex::ApproximateRNG_mys(std::shared_ptr<VectorSet>& fullVectors, st
 
     // 搜索
     float* base = item.getRawData();
-    auto searcher = glass::create_searcher(graph, "L2", 2); // 需要传入level
+    auto searcher = glass::create_searcher(graph, "L2", 1); // 需要传入level
     searcher->SetData(base, item.n, item.d);
     searcher->Optimize(16);
     searcher->SetEf(256);
@@ -1009,19 +1010,19 @@ void VectorIndex::ApproximateRNG_mys(std::shared_ptr<VectorSet>& fullVectors, st
                 while (true)
                 {
                     int fullID = nextFullID.fetch_add(1);
-		            if (fullID % 100000 == 0) printf("fullID: %d\n", fullID);
+		            if (fullID % 100000 == 0) printf("Build SSD [%d / %d]\n", fullID, fullVectors->Count());
                     if (fullID >= fullVectors->Count())
                     {
                         break;
                     }
-                    // MYS7 将所有的节点都进行buildSSD
-                    // if (exceptIDS.count(fullID) > 0)
-                    // {
-                    //     continue;
-                    // }
+                    // MYS7 注释表示用虚拟节点构建SSD
+                    if (exceptIDS.count(fullID) > 0)
+                    {
+                        continue;
+                    }
 
                     uint8_t* uint8Ptr = (uint8_t*)fullVectors->GetVector(fullID);  // 全数据集中的真实向量，将uint8转换成float32然后放入到Search中进行查询。也可以从外部传入一个指针数组，但这里是构建没必要这么干
-                    float* floatArray = new float[128];
+                    float* floatArray = new float[128];        // 128 100
                     for (int i = 0; i < 128; i ++) {
                         floatArray[i] = uint8Ptr[i];
                     }
@@ -1036,7 +1037,8 @@ void VectorIndex::ApproximateRNG_mys(std::shared_ptr<VectorSet>& fullVectors, st
 		            size_t selectionOffset = static_cast<size_t>(fullID)* opt_mys.m_replicaCount;
                     int currReplicaCount = 0;
                     
-                    for (int i = res.size() - 1; i >= 0 && currReplicaCount < opt_mys.m_replicaCount; -- i)
+                    // for (int i = res.size() - 1; i >= 0 && currReplicaCount < opt_mys.m_replicaCount; -- i)
+                    for (int i = 0; i < res.size() && currReplicaCount < opt_mys.m_replicaCount; i ++)  // 结果正序存放，适用于level为0 1 3
                     {
                         if (res[i] == -1)
                         {
@@ -1047,7 +1049,7 @@ void VectorIndex::ApproximateRNG_mys(std::shared_ptr<VectorSet>& fullVectors, st
                         bool rngAccpeted = true;
                         for (int j = 0; j < currReplicaCount; ++j)
                         {
-                            // MYS7 用用传入的void* 计算距离
+                            // MYS7 用传入的void* 计算距离
                             if (currReplicaCount < 3) break;
                             // float nnDist = ComputeDistance(GetSample(res[i]), GetSample(selections[selectionOffset+j].node));
                             float nnDist = ComputeDistance(splitRes[res[i]], splitRes[selections[selectionOffset + j].node]);
