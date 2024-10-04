@@ -534,15 +534,17 @@ namespace SPTAG
 			            LOG(Helper::LogLevel::LL_Info, "Batch %d finished!\n", i);
 
                         for (SizeType j = start; j < end; j++) {
+
+                            if (j % 100000 == 0)printf("-----%u / %u-------\n", j, end);
                             replicaCount[j] = 0;
                             size_t vecOffset = j * (size_t)p_opt.m_replicaCount;
-                            // if (headVectorIDS.count(j) == 0) {  //MYS7 判断所有非头节点重复的次数并加入反向边，这里因为没有头节点所以注释
+                            // if (headVectorIDS.count(j) == 0) {  //MYS7 注释表示用虚拟节点进行构建  判断所有非头节点重复的次数并加入反向边，这里因为没有头节点所以注释
                                 for (int resNum = 0; resNum < p_opt.m_replicaCount && selections[vecOffset + resNum].node != INT_MAX; resNum++) {
                                     ++postingListSize[selections[vecOffset + resNum].node];
                                     selections[vecOffset + resNum].tonode = j;
                                     ++replicaCount[j];
                                 }
-                            // }
+                            // }                   //MYS7 注释表示用虚拟节点进行构建
                         }
 
                         if (p_opt.m_batches > 1)
@@ -583,7 +585,7 @@ namespace SPTAG
                     std::vector<int> replicaCountDist(p_opt.m_replicaCount + 1, 0);
                     for (int i = 0; i < replicaCount.size(); ++i)
                     {
-                        // if (headVectorIDS.count(i) > 0) continue; //MYS7
+                        // if (headVectorIDS.count(i) > 0) continue; //MYS7 注释表示用虚拟节点进行构建
                         ++replicaCountDist[replicaCount[i]];
                     }
 

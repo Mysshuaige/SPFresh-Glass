@@ -402,24 +402,24 @@ namespace SPTAG
                     m_workspace->m_postingIDs.emplace_back(res->VID);
                 }
 
-                // MYS7 这里是在将Head进行转换之后放到结果里面，应该将Head都清除
-                if (m_vectorTranslateMap.get() != nullptr) res->VID = static_cast<SizeType>((m_vectorTranslateMap.get())[res->VID]);
-                else {
+                // MYS7 注释表示用虚拟节点进行搜索
+                // if (m_vectorTranslateMap.get() != nullptr) res->VID = static_cast<SizeType>((m_vectorTranslateMap.get())[res->VID]);
+                // else {
                     res->VID = -1;
                     res->Dist = MaxDist;
-                }
+                // }
             }
 
             for (; i < p_queryResults->GetResultNum(); ++i)
             {
                 auto res = p_queryResults->GetResult(i);
                 if (res->VID == -1) break;
-                // MYS7 这里是在将Head进行转换之后放到结果里面，应该将Head都清除
-                if (m_vectorTranslateMap.get() != nullptr)  res->VID = static_cast<SizeType>((m_vectorTranslateMap.get())[res->VID]);
-                else {
+                // // MYS7 注释表示用虚拟节点进行搜索
+                // if (m_vectorTranslateMap.get() != nullptr)  res->VID = static_cast<SizeType>((m_vectorTranslateMap.get())[res->VID]);
+                // else {
                     res->VID = -1;
                     res->Dist = MaxDist;
-                }
+                // }
             }
             if (m_vectorTranslateMap.get() != nullptr) p_queryResults->Reverse(); // 为什么要reverse？
             m_extraSearcher->SearchIndex(m_workspace.get(), *p_queryResults, m_index, p_stats);
@@ -807,6 +807,7 @@ namespace SPTAG
                     GlassIndexPath += m_options.m_indexDirectory;
                     GlassIndexPath += "/GlassIndex_" + std::to_string(n) + "_" + std::to_string(dim) + "_" + std::to_string(m_options.m_glassM) + "_" + std::to_string(m_options.m_glassEFConstruction) + ".bin";
                 }
+                else GlassIndexPath = m_options.m_glassIndexPath;
                 
                 std::cout << "headvectorInfo dim: " << dim << " total vector: " << n << "   " << GlassIndexPath << std::endl;
 
