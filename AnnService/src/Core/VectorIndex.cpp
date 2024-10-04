@@ -971,13 +971,11 @@ void VectorIndex::ApproximateRNG_mys(std::shared_ptr<VectorSet>& fullVectors, st
     auto item = SPTAG::SPANN::Index<float>::LoadHeadVectors_mys(HeadVectorPath, -1);
     
     // MYS7 通过HeadVectorPath获取c1 c2（也就是两个虚拟节点的真实向量）
-    std::vector<uint8_t> data = item.data;
     int chunkSize = item.d;
-    // const int DIM = item.d;
     std::vector<void*> splitRes;
-    for (size_t i = 0; i < data.size(); i += chunkSize) {                
+    for (size_t i = 0; i < item.data.size(); i += chunkSize) {                
         // 获取当前块的指针并转换为void*
-        void* chunkPtr = const_cast<void*>(static_cast<const void*>(&data[i]));
+        void* chunkPtr = const_cast<void*>(static_cast<const void*>(&item.data[i]));
         splitRes.push_back(chunkPtr);            
     }
 
@@ -987,8 +985,10 @@ void VectorIndex::ApproximateRNG_mys(std::shared_ptr<VectorSet>& fullVectors, st
         GlassIndexPath += opt_mys.m_indexDirectory;
         GlassIndexPath += "/GlassIndex_" + std::to_string(item.n) + "_" + std::to_string(item.d) + "_" + std::to_string(opt_mys.m_glassM) + "_" + std::to_string(opt_mys.m_glassEFConstruction) + ".bin";
     }
+    else GlassIndexPath = opt_mys.m_glassIndexPath;
     graph.load(GlassIndexPath);
 
+    std::cout << GlassIndexPath << std::endl;
     // 搜索
     float* base = item.getRawData();
     auto searcher = glass::create_searcher(graph, "L2", opt_mys.m_glassLevel); // 需要传入level
@@ -1006,7 +1006,7 @@ void VectorIndex::ApproximateRNG_mys(std::shared_ptr<VectorSet>& fullVectors, st
 
     size_t rngFailedCount = 0;
     for (int tid = 0; tid < numThreads; ++tid)
-    {                                   // MYS7 传入void*用来获取原始向量
+    {                                   // MYS7 传入void*用来获取原始向量  //threads.emplace_back([&, tid, base]() 
         threads.emplace_back([&, tid, splitRes]() 
             {
                 std::vector<int> res(candidateNum, -1);
@@ -1023,16 +1023,22 @@ void VectorIndex::ApproximateRNG_mys(std::shared_ptr<VectorSet>& fullVectors, st
                         break;
                     }
                     // MYS7 注释表示用虚拟节点构建SSD
-                    if (exceptIDS.count(fullID) > 0)
-                    {
-                        continue;
+                    // if (exceptIDS.count(fullID) > 0)
+                    // {
+                    //     continue;
+                    // }
+                    // spacev: 
+                    int8_t* int8Ptr = (int8_t*)fullVectors->GetVector(fullID);  // 全数据集中的真实向量，将uint8转换成float32然后放入到Search中进行查询。也可以从外部传入一个指针数组，但这里是构建没必要这么干
+                    float* floatArray = new float[100];
+                    for (int i = 0; i < 100; i ++) {
+                        floatArray[i] = int8Ptr[i];
                     }
-
-                    uint8_t* uint8Ptr = (uint8_t*)fullVectors->GetVector(fullID);  // 全数据集中的真实向量，将uint8转换成float32然后放入到Search中进行查询。也可以从外部传入一个指针数组，但这里是构建没必要这么干
-                    float* floatArray = new float[128];        // 128 100
-                    for (int i = 0; i < 128; i ++) {
-                        floatArray[i] = uint8Ptr[i];
-                    }
+                    // // sift: 
+                    // int8_t* uint8Ptr = (uint8_t*)fullVectors->GetVector(fullID);
+                    // float* floatArray = new float[128];
+                    // for (int i = 0; i < 128; i ++) {
+                    //     floatArray[i] = uint8Ptr[i];
+                    // }
                     // float* floatArray = reinterpret_cast<float*>(fullVectors->GetVector(fullID));  //直接转换会出错
                     searcher->Search(floatArray, candidateNum, res.data(), dist.data());  // query到 每一个邻居的距离  还需要两个邻居之间的距离
                     delete[] floatArray;

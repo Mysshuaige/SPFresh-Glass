@@ -40,15 +40,19 @@ namespace SPTAG
     struct Item {
         uint32_t n;
         uint32_t d;
-        std::vector<uint8_t> data;
+        // std::vector<uint8_t> data;  // uint8: sift
+        std::vector<int8_t> data;   // int8: spacev
+        // std::vector<float> data; // float: deep msturing
 
         float* getRawData(){
-            float* float_array = static_cast<float*>(malloc(data.size() * sizeof(float)));
+            float* data_float = static_cast<float*>(malloc(data.size() * sizeof(float)));
             for (size_t i = 0; i < data.size(); ++i) {
-                // 将 uint8_t 值直接转换为 float 值
-                float_array[i] = static_cast<float>(data[i]);
+                // 将原本的数据格式 直接转换为 float 值
+                data_float[i] = static_cast<float>(data[i]);   // sift spacev
+                // float_array[i] = data[i];  // float: deep msturing 
             }
-            return float_array;
+            std::vector<int8_t> ().swap(data);
+            return data_float;
         }
 
     };
@@ -256,9 +260,13 @@ namespace SPTAG
                 if (maxn > 0) {
                     n = std::min(n, static_cast<uint32_t>(maxn));
                 }
-                std::vector<uint8_t> data(n * d);
+                // std::vector<uint8_t> data(n * d);  // uint8 sift
+                std::vector<int8_t> data(n * d);  // int8 spacev
+                // std::vector<float> data(n * d);  // deep msturing
                 file.seekg(8);
-                file.read(reinterpret_cast<char*>(data.data()), n * d * sizeof(uint8_t));
+                // file.read(reinterpret_cast<char*>(data.data()), n * d * sizeof(uint8_t));  // uint8 sift
+                file.read(reinterpret_cast<char*>(data.data()), n * d * sizeof(int8_t));  // int8 spacev
+                // file.read(reinterpret_cast<char*>(data.data()), n * d * sizeof(float));  // deep msturing
                 file.close();
                 return {n, d, data};
             }
