@@ -7,6 +7,7 @@
 #include "glass/quant/sq4_quant.hpp"
 #include "glass/quant/sq8_quant.hpp"
 #include "glass/quant/sq8_fp32_quant.hpp"
+#include "glass/quant/sq8_quant_int8.hpp"
 
 namespace glass {
 

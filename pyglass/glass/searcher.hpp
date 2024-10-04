@@ -211,6 +211,13 @@ inline std::unique_ptr<SearcherBase> create_searcher(const Graph<int> &graph,
         printf("Metric not suppported\n");
         return nullptr;
     }
+} else if (level == 4) {
+    if (m == Metric::L2) {
+        return std::make_unique<Searcher<SQ8Quantizer_int8<Metric::L2>>>(graph);
+    }else {
+        printf("Metric not suppported\n");
+        return nullptr;
+    }
 } else {
     printf("Metric not found\n");
     return nullptr;

@@ -264,6 +264,42 @@ inline float IP(const float *x, const float *y, int d) {
 #endif
 }
 
+inline float L2SqrSQ8_ext_int8(const float *x, const int8_t *y, int d,
+                              const float *mi, const float *dif) {
+#if defined(__AVX512F__)
+    __m512 sum = _mm512_setzero_ps();
+    int i = 0;
+    // 处理主要的16元素块
+    for (; i <= d - 16; i += 16) {
+        // 加载 int8_t 数据并转换为浮点数
+        auto zz = _mm_loadu_si128(reinterpret_cast<const __m128i*>(y + i)); // 加载 16 个 int8_t
+        auto zzz = _mm512_cvtepi8_epi32(zz); // 转换为 32 位整数，符号扩展
+        auto yy = _mm512_cvtepi32_ps(zzz); // 转换为浮点数
+        // 加载浮点数数组 x
+        auto xx = _mm512_loadu_ps(x + i);
+        // 计算差的平方并累加
+        auto diff = _mm512_sub_ps(xx, yy);
+        sum = _mm512_fmadd_ps(diff, diff, sum);
+    }
+    // 处理剩余不足16个元素的部分
+    float tail_sum = 0.0f;
+    for (; i < d; ++i) {
+        float yy = static_cast<float>(y[i]);
+        auto dif = x[i] - yy;
+        tail_sum += dif * dif;
+    }
+    // 将 SIMD 结果累加并返回
+    return reduce_add_f32x16(sum) + tail_sum;
+#else
+        float sum = 0.0;
+        for (int i = 0; i < d; ++i) {
+            float yy = static_cast<float>(y[i]);
+            auto dif = x[i] - yy;
+            sum += dif * dif;
+        }
+        return sum;
+#endif
+}
 inline float L2SqrSQ8_ext(const float *x, const uint8_t *y, int d,
                           const float *mi, const float *dif) {
 
